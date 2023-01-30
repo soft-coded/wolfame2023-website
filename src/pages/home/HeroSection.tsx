@@ -1,3 +1,6 @@
+import { useLayoutEffect } from "react";
+import gsap from "gsap";
+
 import wolfPng from "../../assets/wolf.png";
 import slideshow1 from "../../assets/slideshow1.jpg";
 import slideshow2 from "../../assets/slideshow2.jpg";
@@ -42,9 +45,32 @@ const bottomSlideshow = [
 	slideshow18,
 ];
 
+function imageTilt(e: MouseEvent) {
+	const { offsetX, offsetY, target } = e;
+	const { clientHeight, clientWidth } = target as HTMLElement;
+	const xPos = offsetX / clientWidth - 0.5;
+	const yPos = offsetY / clientHeight - 0.5;
+	gsap.to(".logo", {
+		duration: 0.5,
+		x: xPos * 20,
+		y: yPos * 30,
+		rotationX: -yPos * 30,
+		rotationY: xPos * 30,
+		ease: "power4.out",
+	});
+}
+
 export default function HeroSection() {
+	useLayoutEffect(() => {
+		document.addEventListener("mousemove", imageTilt);
+
+		return () => {
+			document.removeEventListener("mousemove", imageTilt);
+		};
+	}, []);
+
 	return (
-		<section className="hero-section w-screen h-screen relative flex overflow-hidden">
+		<section className="hero-section w-screen h-screen relative flex overflow-hidden pointer-events-none">
 			<div className="slideshow slideshow-top h-1/2">
 				{topSlideshow.map((slide, i) => (
 					<div className="image-container" key={i}>

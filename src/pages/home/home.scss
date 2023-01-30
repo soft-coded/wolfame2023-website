@@ -2,8 +2,21 @@ $animation-config: linear infinite;
 $slideshow-image-count: 9;
 $slideshow-image-width: 500px;
 
+.hero-section {
+	transform-style: preserve-3d;
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 0;
+		inset: 0;
+		background-color: rgba(0, 0, 0, 0.731);
+	}
+}
+
 .logo {
 	width: 35vmax;
+	z-index: 5;
 }
 
 .slideshow {
@@ -16,15 +29,7 @@ $slideshow-image-width: 500px;
 
 	.image-container {
 		width: $slideshow-image-width;
-		position: relative;
-
-		&::before {
-			content: "";
-			position: absolute;
-			z-index: 1;
-			inset: 0;
-			background-color: rgba(0, 0, 0, 0.75);
-		}
+		filter: grayscale(100%) blur(2px);
 	}
 }
 
