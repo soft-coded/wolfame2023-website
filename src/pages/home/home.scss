@@ -1,4 +1,4 @@
-$animation-config: 60s linear infinite;
+$animation-config: linear infinite;
 $slideshow-image-count: 9;
 $slideshow-image-width: 500px;
 
@@ -16,16 +16,25 @@ $slideshow-image-width: 500px;
 
 	.image-container {
 		width: $slideshow-image-width;
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: 1;
+			inset: 0;
+			background-color: rgba(0, 0, 0, 0.75);
+		}
 	}
 }
 
 .slideshow-top {
-	animation: slideshow-top-anim $animation-config;
+	animation: slideshow-top-anim 60s $animation-config;
 }
 
 .slideshow-bottom {
 	top: 50%;
-	// animation: slideshow-bottom-anim $animation-config;
+	animation: slideshow-bottom-anim 210s $animation-config;
 }
 
 @keyframes slideshow-top-anim {
@@ -41,9 +50,11 @@ $slideshow-image-width: 500px;
 
 @keyframes slideshow-bottom-anim {
 	0% {
-		transform: translateX(0);
+		transform: translateX(-84%);
 	}
 	100% {
-		transform: translateX(100%);
+		transform: translateX(
+			calc($slideshow-image-count * $slideshow-image-width)
+		);
 	}
 }

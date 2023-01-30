@@ -66,6 +66,11 @@ export default function HeroSection() {
 						<img src={slide} alt="wolfame img" />
 					</div>
 				))}
+				{bottomSlideshow.map((slide, i) => (
+					<div className="image-container" key={i}>
+						<img src={slide} alt="wolfame img" />
+					</div>
+				))}
 			</div>
 		</section>
 	);
