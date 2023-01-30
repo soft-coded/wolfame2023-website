@@ -15,3 +15,20 @@ body {
 	background: rgb(27, 26, 26);
 	color: white;
 }
+
+img {
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+	height: 100%;
+}
+
+button {
+	all: inherit;
+}
+
+.image-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
