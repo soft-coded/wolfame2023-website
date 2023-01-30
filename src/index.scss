@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -9,16 +13,5 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background: rgb(27, 26, 26);
-}
-
-.flex {
-	display: flex;
-}
-
-.items-center {
-	align-items: center;
-}
-
-.justify-center {
-	justify-content: center;
+	color: white;
 }
