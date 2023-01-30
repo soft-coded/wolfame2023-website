@@ -1,3 +1,49 @@
+$animation-config: 60s linear infinite;
+$slideshow-image-count: 9;
+$slideshow-image-width: 500px;
+
 .logo {
 	width: 35vmax;
+}
+
+.slideshow {
+	position: absolute;
+	z-index: -1;
+	display: flex;
+	width: calc($slideshow-image-width * $slideshow-image-count * 2);
+	transform: translate3d(0, 0, 0);
+	will-change: transform;
+
+	.image-container {
+		width: $slideshow-image-width;
+	}
+}
+
+.slideshow-top {
+	animation: slideshow-top-anim $animation-config;
+}
+
+.slideshow-bottom {
+	top: 50%;
+	// animation: slideshow-bottom-anim $animation-config;
+}
+
+@keyframes slideshow-top-anim {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(
+			calc($slideshow-image-count * $slideshow-image-width * -1)
+		);
+	}
+}
+
+@keyframes slideshow-bottom-anim {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(100%);
+	}
 }
