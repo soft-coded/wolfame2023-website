@@ -8,6 +8,14 @@
 	padding: 0;
 }
 
+:root {
+	--clr-primary: hsla(358, 72%, 49%, 1);
+	--clr-primary-dark: hsla(358, 72%, 36%, 1);
+	--clr-primary-darker: hsla(358, 72%, 22%, 1);
+	--clr-primary-light: hsla(358, 72%, 65%, 1);
+	--clr-primary-lighter: hsla(358, 72%, 79%, 1);
+}
+
 body {
 	font-family: "Raleway", sans-serif;
 	-webkit-font-smoothing: antialiased;
