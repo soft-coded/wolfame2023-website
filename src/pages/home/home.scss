@@ -10,7 +10,7 @@ $slideshow-image-width: 500px;
 		position: absolute;
 		z-index: 0;
 		inset: 0;
-		background-color: rgba(0, 0, 0, 0.731);
+		background-color: rgba(0, 0, 0, 0.7);
 	}
 }
 
@@ -19,9 +19,16 @@ $slideshow-image-width: 500px;
 	z-index: 5;
 }
 
+.title {
+	font-size: 10rem;
+	font-weight: 800;
+	opacity: 0.9;
+	mix-blend-mode: difference;
+}
+
 .slideshow {
 	position: absolute;
-	z-index: -1;
+	z-index: -5;
 	display: flex;
 	width: calc($slideshow-image-width * $slideshow-image-count * 2);
 	transform: translate3d(0, 0, 0);
@@ -29,7 +36,7 @@ $slideshow-image-width: 500px;
 
 	.image-container {
 		width: $slideshow-image-width;
-		filter: grayscale(100%) blur(2px);
+		filter: grayscale(50%) blur(1px);
 	}
 }
 

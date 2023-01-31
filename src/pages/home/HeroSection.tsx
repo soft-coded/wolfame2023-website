@@ -86,6 +86,9 @@ export default function HeroSection() {
 			<div className="image-container logo self-center m-auto">
 				<img src={wolfPng} alt="Wolfame logo" />
 			</div>
+			<h1 className="title absolute top-1/2 left-1/2 z-10 transform -translate-x-1/2 -translate-y-1/2">
+				WOLFAME
+			</h1>
 			<div className="slideshow slideshow-bottom h-1/2">
 				{bottomSlideshow.map((slide, i) => (
 					<div className="image-container" key={i}>
