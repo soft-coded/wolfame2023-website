@@ -6,10 +6,12 @@ export default function AboutSection() {
 		gsap.fromTo(
 			".about-section",
 			{
-				background: "#000000",
+				background:
+					"linear-gradient(0deg, var(--clr-primary), var(--clr-primary-darker))",
 			},
 			{
-				background: "#999999",
+				background:
+					"linear-gradient(360deg, var(--clr-primary), var(--clr-primary-darker))",
 				scrollTrigger: {
 					trigger: ".about-section",
 					start: "top top",
