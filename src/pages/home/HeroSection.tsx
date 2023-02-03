@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 
 import wolfPng from "../../assets/wolf.png";
@@ -61,17 +61,25 @@ function imageTilt(e: MouseEvent) {
 }
 
 export default function HeroSection() {
+	const heroSectionRef = useRef<HTMLElement>(null);
+
 	useLayoutEffect(() => {
-		document.addEventListener("mousemove", imageTilt);
+		if (!heroSectionRef.current) return;
+		const heroSection = heroSectionRef.current;
+
+		heroSection.addEventListener("mousemove", imageTilt);
 
 		return () => {
-			document.removeEventListener("mousemove", imageTilt);
+			heroSection.removeEventListener("mousemove", imageTilt);
 		};
 	}, []);
 
 	return (
-		<section className="hero-section w-screen h-screen relative flex overflow-hidden pointer-events-none">
-			<div className="slideshow slideshow-top h-1/2">
+		<section
+			ref={heroSectionRef}
+			className="hero-section w-screen h-screen relative flex overflow-hidden"
+		>
+			<div className="slideshow slideshow-top h-1/2 pointer-events-none">
 				{topSlideshow.map((slide, i) => (
 					<div className="image-container" key={i}>
 						<img src={slide} alt="wolfame img" />
@@ -83,13 +91,13 @@ export default function HeroSection() {
 					</div>
 				))}
 			</div>
-			<div className="image-container logo self-center m-auto">
+			<div className="image-container logo self-center m-auto pointer-events-none">
 				<img src={wolfPng} alt="Wolfame logo" />
 			</div>
-			<h1 className="title absolute top-1/2 left-1/2 z-10 transform -translate-x-1/2 -translate-y-1/2">
+			<h1 className="title absolute top-1/2 left-1/2 z-10 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
 				WOLFAME
 			</h1>
-			<div className="slideshow slideshow-bottom h-1/2">
+			<div className="slideshow slideshow-bottom h-1/2 pointer-events-none">
 				{bottomSlideshow.map((slide, i) => (
 					<div className="image-container" key={i}>
 						<img src={slide} alt="wolfame img" />
