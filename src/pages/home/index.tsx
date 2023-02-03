@@ -3,6 +3,7 @@ import gsap from "gsap";
 
 import HeroLoader from "./HeroLoader";
 import HeroSection from "./HeroSection";
+import AboutSection from "./AboutSection";
 import "./home.scss";
 
 function heroLoadingAnim() {
@@ -50,6 +51,7 @@ export default function HomePage() {
 		<div className="homepage">
 			<HeroLoader />
 			<HeroSection />
+			<AboutSection />
 		</div>
 	);
 }

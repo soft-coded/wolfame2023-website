@@ -44,9 +44,7 @@ $slideshow-image-width: 500px;
 
 		.image-container {
 			width: $slideshow-image-width;
-			filter: grayscale(30%) blur(1px);
-			// filter: grayscale(100%) blur(1px);
-			// filter: blur(2px);
+			filter: grayscale(30%);
 		}
 	}
 
@@ -80,4 +78,8 @@ $slideshow-image-width: 500px;
 			);
 		}
 	}
+}
+
+.about-section {
+	padding: 100px 0;
 }
