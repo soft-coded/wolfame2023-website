@@ -7,11 +7,11 @@ export default function AboutSection() {
 			".about-section",
 			{
 				background:
-					"linear-gradient(0deg, var(--clr-primary), var(--clr-primary-darker))",
+					"linear-gradient(0deg, #000, var(--clr-primary-dark), #000)",
 			},
 			{
 				background:
-					"linear-gradient(360deg, var(--clr-primary), var(--clr-primary-darker))",
+					"linear-gradient(360deg, #000, var(--clr-primary-dark), #000)",
 				scrollTrigger: {
 					trigger: ".about-section",
 					start: "top top",
