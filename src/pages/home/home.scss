@@ -87,8 +87,32 @@ $section-padding-y: 100px;
 
 	.heading {
 		font-size: 4rem;
-		// mix-blend-mode: difference;
-		// opacity: 0.9;
-		// color: red;
+	}
+
+	.panel {
+		border-radius: 20px;
+		overflow: hidden;
+	}
+
+	.background-image {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background-color: #0000009d;
+		}
+
+		.container {
+			position: relative;
+			z-index: 1;
+			font-size: 1.8rem;
+			font-weight: 500;
+		}
+	}
+
+	.about-description {
+		background-image: url(../../assets/slideshow3.jpg);
 	}
 }

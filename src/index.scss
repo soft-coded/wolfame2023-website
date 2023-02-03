@@ -53,10 +53,24 @@ h6 {
 	justify-content: center;
 }
 
+.background-image {
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-blend-mode: difference;
+}
+
 .container {
 	padding-left: var(--container-padding-x);
 	padding-right: var(--container-padding-x);
 	max-width: var(--container-max-width);
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.wolfame {
+	color: red;
+	font-weight: 700;
+	text-shadow: 1px 1px 0 var(--clr-primary-lighter);
+	font-size: 1.2em;
 }
