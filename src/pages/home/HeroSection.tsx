@@ -67,9 +67,12 @@ export default function HeroSection() {
 		if (!heroSectionRef.current) return;
 		const heroSection = heroSectionRef.current;
 
-		heroSection.addEventListener("mousemove", imageTilt);
+		const ctx = gsap.context(() => {
+			heroSection.addEventListener("mousemove", imageTilt);
+		}, heroSectionRef);
 
 		return () => {
+			ctx.revert();
 			heroSection.removeEventListener("mousemove", imageTilt);
 		};
 	}, []);
