@@ -27,11 +27,9 @@ $section-padding-y: 100px;
 
 	.title {
 		font-size: 10rem;
-		font-weight: 800;
 		opacity: 0.9;
 		mix-blend-mode: difference;
 		color: red;
-		font-family: "DM Serif Display", serif;
 		letter-spacing: 10px;
 	}
 
@@ -85,6 +83,12 @@ $section-padding-y: 100px;
 	padding-top: $section-padding-y;
 	padding-bottom: $section-padding-y;
 	position: relative;
-	box-shadow: 0 0 150px #000;
-	overflow-y: visible;
+	box-shadow: 0 -5px 150px #000;
+
+	.heading {
+		font-size: 4rem;
+		// mix-blend-mode: difference;
+		// opacity: 0.9;
+		// color: red;
+	}
 }
