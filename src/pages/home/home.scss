@@ -53,7 +53,7 @@ $section-padding-y: 100px;
 
 	.slideshow-bottom {
 		top: 50%;
-		animation: slideshow-bottom-anim 210s $animation-config;
+		animation: slideshow-bottom-anim 180s $animation-config;
 	}
 
 	@keyframes slideshow-top-anim {
@@ -69,12 +69,15 @@ $section-padding-y: 100px;
 
 	@keyframes slideshow-bottom-anim {
 		0% {
-			transform: translateX(-84%);
+			transform: translateX(
+				calc(
+					($slideshow-image-count * $slideshow-image-width * -2) +
+						($slideshow-image-width * 3)
+				)
+			);
 		}
 		100% {
-			transform: translateX(
-				calc($slideshow-image-count * $slideshow-image-width)
-			);
+			transform: translateX(0);
 		}
 	}
 }
