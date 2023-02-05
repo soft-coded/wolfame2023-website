@@ -58,7 +58,7 @@ export default function AboutSection() {
 					WHAT IS <span className="wolfame">WOLFAME</span>?
 				</h1>
 			</PanelDiv>
-			<PanelDiv className="about-description background-image">
+			<PanelDiv className="about-wolfame background-image">
 				<div className="container text-center">
 					<span className="wolfame">WOLFAME</span> is the cultural sports
 					festival organised by Wolfenden Hall annually.
@@ -71,13 +71,18 @@ export default function AboutSection() {
 				</div>
 			</PanelDiv>
 			<PanelDiv>
-				<h1 className="heading text-center">TWO</h1>
+				<h1 className="heading text-center">"WOLFENDEN HALL"?</h1>
 			</PanelDiv>
-			<PanelDiv>
-				<h1 className="heading text-center">THREE</h1>
-			</PanelDiv>
-			<PanelDiv>
-				<h1 className="heading text-center">FOUR</h1>
+			<PanelDiv className="about-hall background-image">
+				<div className="container text-center">
+					Wolfenden Hall is a place of residence for the students of Indian
+					Institute of Engineering Science and Technology, Shibpur. <br />
+					Located right in front of the Oval ground of the institute, it is the
+					home to many prestigious events organised throughout the year, one of
+					them being <span className="wolfame">WOLFAME</span>.<br /> Residents
+					of Wolfenden Hall participate in and organise all of the activities in
+					the institute.
+				</div>
 			</PanelDiv>
 		</section>
 	);

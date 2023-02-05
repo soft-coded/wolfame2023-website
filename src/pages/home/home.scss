@@ -95,6 +95,8 @@ $section-padding-y: 100px;
 	.panel {
 		border-radius: 20px;
 		overflow: hidden;
+		will-change: transform;
+		backface-visibility: hidden;
 	}
 
 	.background-image {
@@ -104,18 +106,22 @@ $section-padding-y: 100px;
 			content: "";
 			position: absolute;
 			inset: 0;
-			background-color: #0000009d;
-		}
-
-		.container {
-			position: relative;
-			z-index: 1;
-			font-size: 1.8rem;
-			font-weight: 500;
+			background-color: #00000084;
 		}
 	}
 
-	.about-description {
+	.container {
+		position: relative;
+		z-index: 1;
+		font-size: 1.8rem;
+		font-weight: 500;
+	}
+
+	.about-wolfame {
 		background-image: url(../../assets/slideshow3.jpg);
+	}
+
+	.about-hall {
+		background-image: url(../../assets/slideshow5.jpg);
 	}
 }
