@@ -52,16 +52,18 @@ export default function AboutSection() {
 	}, []);
 
 	return (
-		<section ref={aboutSectionRef} className="about-section h-screen">
+		<section ref={aboutSectionRef} className="about-section">
 			<PanelDiv className="about-intro">
 				<h1 className="heading text-center">
-					WHAT IS <span className="wolfame">WOLFAME</span>?
+					{/* WHAT IS <span className="wolfame">WOLFAME</span>? */}
+					WHAT IS <span className="WOLFAME"></span>?
 				</h1>
 			</PanelDiv>
 			<PanelDiv className="about-wolfame background-image">
 				<div className="container text-center">
-					<span className="wolfame">WOLFAME</span> is the cultural sports
-					festival organised by Wolfenden Hall annually.
+					{/* <span className="wolfame">WOLFAME</span> is the cultural sports */}
+					<span className="WOLFAME"></span> is the cultural sports festival
+					organised by Wolfenden Hall annually.
 					<br /> The three day long event involves a plethora of activities,
 					both indoor and outdoor, attended by enthusiastic students willing to
 					prove their mettle.
@@ -78,9 +80,11 @@ export default function AboutSection() {
 					Wolfenden Hall is a place of residence for the students of Indian
 					Institute of Engineering Science and Technology, Shibpur. <br />
 					Located right in front of the Oval ground of the institute, it is the
-					home to many prestigious events organised throughout the year, one of
-					them being <span className="wolfame">WOLFAME</span>.<br /> Residents
-					of Wolfenden Hall participate in and organise all of the activities in
+					home to many prestigious events organised throughout the year, one
+					of&nbsp;
+					{/* them being <span className="wolfame">WOLFAME</span>.<br /> Residents */}
+					them being <span className="WOLFAME"></span>.<br /> Residents of
+					Wolfenden Hall participate in and organise all of the activities in
 					the institute.
 				</div>
 			</PanelDiv>

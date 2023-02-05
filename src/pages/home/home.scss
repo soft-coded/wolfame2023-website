@@ -88,10 +88,6 @@ $section-padding-y: 100px;
 	position: relative;
 	box-shadow: 0 -5px 150px #000;
 
-	.heading {
-		font-size: 4rem;
-	}
-
 	.panel {
 		border-radius: 20px;
 		overflow: hidden;
@@ -123,5 +119,17 @@ $section-padding-y: 100px;
 
 	.about-hall {
 		background-image: url(../../assets/slideshow5.jpg);
+	}
+}
+
+.events-section {
+	.event-list {
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+
+		li {
+			font-size: 2rem;
+		}
 	}
 }
