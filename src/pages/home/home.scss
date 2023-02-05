@@ -2,6 +2,7 @@ $animation-config: linear infinite;
 $slideshow-image-count: 9;
 $slideshow-image-width: 500px;
 $section-padding-y: 100px;
+$events-section-gap: 4rem;
 
 .hero-loader {
 	z-index: 1;
@@ -126,10 +127,21 @@ $section-padding-y: 100px;
 	.event-list {
 		display: flex;
 		flex-direction: column;
-		gap: 4rem;
+		gap: $events-section-gap;
+		padding: $events-section-gap 0;
 
 		li {
 			font-size: 2rem;
+			cursor: pointer;
 		}
+	}
+
+	.event-image {
+		right: 10%;
+		top: $events-section-gap;
+		width: 50%;
+		height: 90vh;
+		border-radius: 16px;
+		overflow: hidden;
 	}
 }
