@@ -160,3 +160,13 @@ $events-section-gap: 4rem;
 		}
 	}
 }
+
+.gallery-section {
+	margin-top: 100px;
+	overflow: hidden;
+
+	.gallery-image {
+		border-radius: 10px;
+		overflow: hidden;
+	}
+}

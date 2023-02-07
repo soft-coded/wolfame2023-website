@@ -5,6 +5,7 @@ import HeroLoader from "./HeroLoader";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import EventsSection from "./EventsSection";
+import GallerySection from "./GallerySection";
 import "./home.scss";
 
 function heroLoadingAnim(
@@ -68,6 +69,7 @@ export default function HomePage() {
 			<HeroSection />
 			<AboutSection />
 			<EventsSection />
+			<GallerySection />
 		</div>
 	);
 }
