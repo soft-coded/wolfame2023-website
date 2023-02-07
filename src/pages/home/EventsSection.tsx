@@ -65,7 +65,7 @@ export default function EventsSection() {
 			<header className="h-screen w-screen flex items-center justify-center">
 				<h1 className="text-center">EVENTS</h1>
 			</header>
-			<div className="events-swiper-container h-screen flex items-center justify-center">
+			<div className="events-swiper-container flex items-center justify-center">
 				<Swiper
 					effect="coverflow"
 					grabCursor
@@ -89,7 +89,7 @@ export default function EventsSection() {
 							className="event-slide image-container relative"
 						>
 							<img src={eventObj.image} alt={eventObj.event} />
-							<h1>{eventObj.event}</h1>
+							<h3 className="slide-title">{eventObj.event}</h3>
 						</SwiperSlide>
 					))}
 				</Swiper>

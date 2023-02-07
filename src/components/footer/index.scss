@@ -1,0 +1,40 @@
+.site-footer {
+	// height: 50vh;
+	background-color: #272727;
+	padding: 50px 0;
+
+	.title-logo {
+		gap: 20px;
+
+		.image-container {
+			width: 200px;
+			filter: grayscale(50%);
+		}
+	}
+
+	h5 {
+		font-weight: 500;
+	}
+
+	.footer-section {
+		h5 {
+			margin-bottom: 10px;
+		}
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			font-weight: 400;
+			font-size: 0.85rem;
+
+			li {
+				cursor: pointer;
+			}
+		}
+	}
+
+	.copyright {
+		margin-top: 50px;
+	}
+}

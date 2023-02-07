@@ -138,6 +138,7 @@ $events-section-gap: 4rem;
 
 	.events-swiper-container {
 		transition: background-color 0.5s ease;
+		height: 120vh;
 	}
 
 	.events-swiper {
@@ -151,18 +152,20 @@ $events-section-gap: 4rem;
 		border-radius: 20px;
 		overflow: hidden;
 
-		h1 {
+		.slide-title {
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			z-index: 2;
 			transform: translate(-50%, -50%);
+			font-size: 2.5rem;
 		}
 	}
 }
 
 .gallery-section {
-	margin-top: 100px;
+	margin: 100px 0;
+	height: 150vh;
 	overflow: hidden;
 
 	.gallery-image {

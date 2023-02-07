@@ -25,26 +25,19 @@ const images = [
 	{ image: slideshow5, size: "15vw", top: "22%", left: "71%" },
 	{ image: slideshow6, size: "16vw", top: "15%", left: "40%" },
 	{ image: slideshow7, size: "14vw", top: "30%", left: "8%" },
-	{ image: slideshow8, size: "12vw", top: "43%", left: "42%" },
-	{ image: slideshow9, size: "13vw", top: "40%", left: "27%" },
+	{ image: slideshow8, size: "12vw", top: "43%", left: "44%" },
+	{ image: slideshow9, size: "13vw", top: "45%", left: "27%" },
 	{ image: slideshow10, size: "15vw", top: "40%", left: "78%" },
-	{ image: slideshow11, size: "12vw", top: "55%", left: "55%" },
+	{ image: slideshow11, size: "12vw", top: "55%", left: "65%" },
 	{ image: slideshow12, size: "14vw", top: "64%", left: "80%" },
 	{ image: slideshow13, size: "14vw", top: "73%", left: "11%" },
-	{ image: slideshow14, size: "12vw", top: "70%", left: "30%" },
-	{ image: slideshow15, size: "15vw", top: "72%", left: "65%" },
+	{ image: slideshow14, size: "14vw", top: "70%", left: "40%" },
+	{ image: slideshow15, size: "15vw", top: "72%", left: "62%" },
 ];
-
-/* function randomNumber(min: number, max: number) {
-	return Math.floor(Math.random() * (max - min + 1)) + min;
-} */
 
 const randomModifiers: number[] = [
 	-8, 10, 9, 4, -4, -6, 9, 3, 4, 6, -6, -3, 5, -3, -9,
 ];
-// for (let i = 0; i < 15; i++) {
-// randomModifiers.push(randomNumber(-10, 10));
-// }
 
 function imageMove(e: MouseEvent) {
 	const galleryImages = gsap.utils.toArray<HTMLDivElement>(".gallery-image");
@@ -78,11 +71,8 @@ export default function GallerySection() {
 	}, []);
 
 	return (
-		<section
-			ref={gallerySectionRef}
-			className="gallery-section h-screen relative"
-		>
-			<h1 className="text-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
+		<section ref={gallerySectionRef} className="gallery-section relative">
+			<h1 className="text-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none mix-blend-difference">
 				GALLERY
 			</h1>
 			<div className="gallery-images pointer-events-none">
