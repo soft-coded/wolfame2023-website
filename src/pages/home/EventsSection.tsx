@@ -67,7 +67,7 @@ export default function EventsSection() {
 		<section ref={eventsSectionRef} className="events-section">
 			<header className="h-screen w-screen flex items-center justify-center bg-gradient">
 				<h1 className="text-center relative">
-					<div className="image-container title-bg z-0">
+					<div className="image-container title-bg">
 						<img src={scratchPng} alt="Scratch" />
 					</div>
 					<span className="relative z-10">EVENTS</span>

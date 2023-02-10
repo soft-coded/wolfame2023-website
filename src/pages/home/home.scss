@@ -139,6 +139,10 @@ $events-section-gap: 4rem;
 }
 
 .events-section {
+	.title-bg {
+		z-index: 0;
+	}
+
 	.event-list {
 		display: flex;
 		flex-direction: column;
