@@ -92,7 +92,7 @@ export default function AboutSection() {
 					<div className="image-container title-bg">
 						<img src={scratchPng} alt="Scratch" />
 					</div>
-					"WOLFENDEN HALL"?
+					WOLFENDEN HALL
 				</h1>
 			</PanelDiv>
 			<PanelDiv className="about-hall background-image">

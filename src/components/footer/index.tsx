@@ -1,9 +1,31 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
 import wolfImg from "../../assets/wolf.png";
+import instagramSvg from "../../assets/svgs/instagram.svg";
+import gmailSvg from "../../assets/svgs/gmail.svg";
+import phoneSvg from "../../assets/svgs/phone.svg";
 import "./index.scss";
 
+const emails = ["wolfendenhall53@gmail.com", "trilokij5@gmail.com"];
+
+const phoneNumbers = ["+91 8920557192", "+91 6202595022", "+91 9928966956"];
+
+const socials = [
+	{
+		label: "Instagram",
+		link: "https://www.instagram.com/wolfame_official/",
+		icon: instagramSvg,
+	},
+];
+
+function getCurrentYear() {
+	return new Date().getFullYear();
+}
+
 export default function Footer() {
+	const currentYear = useMemo(getCurrentYear, []);
+
 	return (
 		<footer className="site-footer">
 			<div className="container flex justify-between">
@@ -11,7 +33,7 @@ export default function Footer() {
 					<div className="image-container">
 						<img src={wolfImg} alt="wolf" />
 					</div>
-					<h5>WOLFAME 2023</h5>
+					<h5>WOLFAME {currentYear}</h5>
 				</div>
 				<div className="routes footer-section">
 					<h5>EXPLORE</h5>
@@ -33,27 +55,47 @@ export default function Footer() {
 				<div className="contact footer-section">
 					<h5>CONTACT</h5>
 					<ul>
-						<li>trilokij5@gmail.com</li>
-						<li>raushan14189@gmail.com</li>
-						<li>singhmayank7073@gmail.com</li>
-						<li>+91 8920557192</li>
-						<li>+91 6202595022</li>
-						<li>+91 9928966956</li>
+						{emails.map((email, i) => (
+							<li key={i}>
+								<a target="_blank" rel="noreferrer" href={`mailto:${email}`}>
+									<div className="image-container">
+										<img src={gmailSvg} alt="email" />
+									</div>
+									{email}
+								</a>
+							</li>
+						))}
+						{phoneNumbers.map((num, i) => (
+							<li key={i}>
+								<a target="_blank" rel="noreferrer" href={`tel:${num}`}>
+									<div className="image-container">
+										<img src={phoneSvg} alt="email" />
+									</div>
+									{num}
+								</a>
+							</li>
+						))}
 					</ul>
 				</div>
 				<div className="socials footer-section">
 					<h5>SOCIALS</h5>
 					<ul>
-						<li>LinkedIn</li>
-						<li>Facebook</li>
-						<li>Instagram</li>
-						<li>Whatsapp</li>
+						{socials.map((social, i) => (
+							<li key={i}>
+								<a target="_blank" rel="noreferrer" href={social.link}>
+									<div className="image-container">
+										<img src={social.icon} alt={social.label} />
+									</div>
+									<span>{social.label}</span>
+								</a>
+							</li>
+						))}
 					</ul>
 				</div>
 			</div>
 			<div className="copyright text-center">
-				Copyright &copy; {new Date().getFullYear()}. All rights reserved by
-				Wolfame Comittee and IIEST, Shibpur.
+				Copyright &copy; {currentYear}. All rights reserved by Wolfame Comittee
+				and IIEST, Shibpur.
 			</div>
 		</footer>
 	);

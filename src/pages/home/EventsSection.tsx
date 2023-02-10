@@ -57,7 +57,7 @@ export default function EventsSection() {
 
 	useLayoutEffect(() => {
 		const ctx = gsap.context(() => {
-			animateTitleBg(".title-bg", "header");
+			animateTitleBg(".events-section .title-bg", ".events-section header");
 		}, eventsSectionRef);
 
 		return () => ctx.revert();

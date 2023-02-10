@@ -1,7 +1,11 @@
 .site-footer {
-	// height: 50vh;
 	background-color: #272727;
 	padding: 50px 0;
+
+	.image-container {
+		width: 1.4rem;
+		overflow: visible;
+	}
 
 	.title-logo {
 		gap: 20px;
@@ -30,6 +34,9 @@
 
 			li {
 				cursor: pointer;
+				display: flex;
+				align-items: center;
+				gap: 7px;
 			}
 		}
 	}

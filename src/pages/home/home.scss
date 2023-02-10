@@ -183,27 +183,31 @@ $events-section-gap: 4rem;
 }
 
 .gallery-section {
-	background-image: repeating-radial-gradient(
-		circle,
-		var(--clr-bg) 0% 10%,
-		var(--clr-bg-3) 10% 20%,
-		#000 20% 30%
-	);
-	// background-image: radial-gradient(
+	// background-image: repeating-radial-gradient(
 	// 	circle,
-	// 	var(--clr-bg) 20%,
-	// 	var(--clr-bg-3) 70%,
-	// 	#000
+	// 	var(--clr-bg) 0% 10%,
+	// 	var(--clr-bg-3) 10% 20%,
+	// 	#000 20% 30%
 	// );
+
+	.title-bg {
+		z-index: 0;
+	}
 
 	.gallery-images {
 		padding: 100px 0;
 		overflow: hidden;
 		gap: 5vw;
+		background-image: radial-gradient(
+			100% 60% at 50% 50%,
+			var(--clr-bg) 20%,
+			var(--clr-bg-3) 50%,
+			#000
+		);
 	}
 
 	.gallery-image-column {
-		gap: 10vh;
+		gap: 5vh;
 	}
 
 	.column-1,

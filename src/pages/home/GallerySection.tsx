@@ -16,24 +16,9 @@ import slideshow12 from "../../assets/slideshow12.jpg";
 import slideshow13 from "../../assets/slideshow13.jpg";
 import slideshow14 from "../../assets/slideshow14.jpg";
 import slideshow15 from "../../assets/slideshow15.jpg";
+import scratchPng from "../../assets/scratch.png";
+import { animateTitleBg } from "../../utils";
 
-// const images = [
-// 	{ image: slideshow1, size: "13vw", top: "7%", left: "10%" },
-// 	{ image: slideshow2, size: "15vw", top: "5%", left: "80%" },
-// 	{ image: slideshow3, size: "17vw", top: "13%", left: "23%" },
-// 	{ image: slideshow4, size: "12vw", top: "7%", left: "55%" },
-// 	{ image: slideshow5, size: "15vw", top: "22%", left: "71%" },
-// 	{ image: slideshow6, size: "16vw", top: "15%", left: "40%" },
-// 	{ image: slideshow7, size: "14vw", top: "30%", left: "8%" },
-// 	{ image: slideshow8, size: "12vw", top: "43%", left: "44%" },
-// 	{ image: slideshow9, size: "13vw", top: "45%", left: "27%" },
-// 	{ image: slideshow10, size: "15vw", top: "40%", left: "78%" },
-// 	{ image: slideshow11, size: "12vw", top: "55%", left: "65%" },
-// 	{ image: slideshow12, size: "14vw", top: "64%", left: "80%" },
-// 	{ image: slideshow13, size: "14vw", top: "73%", left: "11%" },
-// 	{ image: slideshow14, size: "14vw", top: "70%", left: "40%" },
-// 	{ image: slideshow15, size: "15vw", top: "72%", left: "62%" },
-// ];
 const col1Images = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5];
 
 const col2Images = [
@@ -51,27 +36,6 @@ const col3Images = [
 	slideshow14,
 	slideshow15,
 ];
-
-const randomModifiers: number[] = [
-	-8, 10, 9, 4, -4, -6, 9, 3, 4, 6, -6, -3, 5, -3, -9,
-];
-
-function imageMove(e: MouseEvent) {
-	const galleryImages = gsap.utils.toArray<HTMLDivElement>(".gallery-image");
-
-	const { offsetX, offsetY } = e;
-
-	galleryImages.forEach((image, i) => {
-		const xPos = (offsetX / image.clientWidth) * randomModifiers[i];
-		const yPos = (offsetY / image.clientHeight) * randomModifiers[i];
-		gsap.to(image, {
-			duration: 0.5,
-			x: xPos,
-			y: yPos,
-			ease: "power4.out",
-		});
-	});
-}
 
 type ColumnProps = {
 	containerClassName?: string;
@@ -106,36 +70,24 @@ export default function GallerySection() {
 	const gallerySectionRef = useRef<HTMLElement>(null);
 
 	useLayoutEffect(() => {
-		if (!gallerySectionRef.current) return;
-		const gallerySection = gallerySectionRef.current;
+		const ctx = gsap.context(() => {
+			animateTitleBg(".gallery-section .title-bg", ".gallery-section header");
+		}, gallerySectionRef);
 
-		gallerySection.addEventListener("mousemove", imageMove);
-
-		return () => {
-			gallerySection.removeEventListener("mousemove", imageMove);
-		};
+		return () => ctx.revert();
 	}, []);
 
 	return (
 		<section ref={gallerySectionRef} className="gallery-section relative">
-			<h1 className="text-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none mix-blend-difference">
-				GALLERY
-			</h1>
-			<div className="gallery-images container flex items-center justify-center pointer-events-none">
-				{/* {images.map((imageObj, i) => (
-					<div
-						key={i}
-						className="gallery-image image-container absolute"
-						style={{
-							width: imageObj.size,
-							height: imageObj.size,
-							top: imageObj.top,
-							left: imageObj.left,
-						}}
-					>
-						<img src={imageObj.image} alt="gallery" />
+			<header className="h-screen bg-gradient flex items-center justify-center">
+				<h1 className="text-center relative">
+					<div className="image-container title-bg">
+						<img src={scratchPng} alt="scratch" />
 					</div>
-				))} */}
+					<span className="relative z-10">GALLERY</span>
+				</h1>
+			</header>
+			<div className="gallery-images container flex items-center justify-between pointer-events-none">
 				<GalleryImageColumn images={col1Images} containerClassName="column-1" />
 				<GalleryImageColumn images={col2Images} containerClassName="column-2" />
 				<GalleryImageColumn images={col3Images} containerClassName="column-3" />
