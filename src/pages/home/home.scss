@@ -4,6 +4,21 @@ $slideshow-image-width: 500px;
 $section-padding-y: 100px;
 $events-section-gap: 4rem;
 
+.bg-gradient {
+	background-image: radial-gradient(
+		60% 55% at 50% 50%,
+		var(--clr-bg) 20%,
+		var(--clr-bg-3) 75%,
+		#000
+	);
+}
+
+.title-bg {
+	@apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10;
+	width: 40vw;
+	overflow: hidden;
+}
+
 .hero-loader {
 	z-index: 1;
 	background-color: black;
@@ -31,7 +46,8 @@ $events-section-gap: 4rem;
 		opacity: 0.9;
 		mix-blend-mode: difference;
 		color: red;
-		letter-spacing: 10px;
+		// letter-spacing: 10px;
+		-webkit-text-stroke: 3px rgb(255, 119, 119);
 	}
 
 	.slideshow {
@@ -87,10 +103,9 @@ $events-section-gap: 4rem;
 	padding-top: $section-padding-y;
 	padding-bottom: $section-padding-y;
 	position: relative;
-	box-shadow: 0 -5px 150px #000;
+	box-shadow: 0 -70px 70px #000;
 
 	.panel {
-		border-radius: 20px;
 		overflow: hidden;
 		will-change: transform;
 		backface-visibility: hidden;

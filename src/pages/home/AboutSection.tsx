@@ -1,6 +1,10 @@
 import { useLayoutEffect, ReactNode, useRef } from "react";
 import gsap from "gsap";
 
+// import PawSvg from "../../svg/paw";
+import scratchPng from "../../assets/scratch.png";
+import { animateTitleBg } from "../../utils";
+
 function PanelDiv({
 	children,
 	className,
@@ -51,17 +55,28 @@ export default function AboutSection() {
 		return () => ctx.revert();
 	}, []);
 
+	useLayoutEffect(() => {
+		const ctx = gsap.context(() => {
+			animateTitleBg(".about-intro .title-bg", ".about-intro");
+			animateTitleBg(".about-hall-title .title-bg", ".about-hall-title");
+		}, aboutSectionRef);
+
+		return () => ctx.revert();
+	}, []);
+
 	return (
 		<section ref={aboutSectionRef} className="about-section">
-			<PanelDiv className="about-intro">
-				<h1 className="heading text-center">
-					{/* WHAT IS <span className="wolfame">WOLFAME</span>? */}
+			<PanelDiv className="about-intro bg-gradient">
+				<h1 className="heading text-center relative">
+					{/* <PawSvg className="paw" /> */}
+					<div className="image-container title-bg">
+						<img src={scratchPng} alt="Scratch" />
+					</div>
 					WHAT IS <span className="WOLFAME"></span>?
 				</h1>
 			</PanelDiv>
 			<PanelDiv className="about-wolfame background-image">
 				<div className="container text-center">
-					{/* <span className="wolfame">WOLFAME</span> is the cultural sports */}
 					<span className="WOLFAME"></span> is the cultural sports festival
 					organised by Wolfenden Hall annually.
 					<br /> The three day long event involves a plethora of activities,
@@ -72,8 +87,13 @@ export default function AboutSection() {
 					witnessed by an approximate of 10,000 people.
 				</div>
 			</PanelDiv>
-			<PanelDiv>
-				<h1 className="heading text-center">"WOLFENDEN HALL"?</h1>
+			<PanelDiv className="about-hall-title bg-gradient">
+				<h1 className="heading text-center relative">
+					<div className="image-container title-bg">
+						<img src={scratchPng} alt="Scratch" />
+					</div>
+					"WOLFENDEN HALL"?
+				</h1>
 			</PanelDiv>
 			<PanelDiv className="about-hall background-image">
 				<div className="container text-center">
