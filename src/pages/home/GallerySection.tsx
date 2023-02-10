@@ -17,22 +17,39 @@ import slideshow13 from "../../assets/slideshow13.jpg";
 import slideshow14 from "../../assets/slideshow14.jpg";
 import slideshow15 from "../../assets/slideshow15.jpg";
 
-const images = [
-	{ image: slideshow1, size: "13vw", top: "7%", left: "10%" },
-	{ image: slideshow2, size: "15vw", top: "5%", left: "80%" },
-	{ image: slideshow3, size: "17vw", top: "13%", left: "23%" },
-	{ image: slideshow4, size: "12vw", top: "7%", left: "55%" },
-	{ image: slideshow5, size: "15vw", top: "22%", left: "71%" },
-	{ image: slideshow6, size: "16vw", top: "15%", left: "40%" },
-	{ image: slideshow7, size: "14vw", top: "30%", left: "8%" },
-	{ image: slideshow8, size: "12vw", top: "43%", left: "44%" },
-	{ image: slideshow9, size: "13vw", top: "45%", left: "27%" },
-	{ image: slideshow10, size: "15vw", top: "40%", left: "78%" },
-	{ image: slideshow11, size: "12vw", top: "55%", left: "65%" },
-	{ image: slideshow12, size: "14vw", top: "64%", left: "80%" },
-	{ image: slideshow13, size: "14vw", top: "73%", left: "11%" },
-	{ image: slideshow14, size: "14vw", top: "70%", left: "40%" },
-	{ image: slideshow15, size: "15vw", top: "72%", left: "62%" },
+// const images = [
+// 	{ image: slideshow1, size: "13vw", top: "7%", left: "10%" },
+// 	{ image: slideshow2, size: "15vw", top: "5%", left: "80%" },
+// 	{ image: slideshow3, size: "17vw", top: "13%", left: "23%" },
+// 	{ image: slideshow4, size: "12vw", top: "7%", left: "55%" },
+// 	{ image: slideshow5, size: "15vw", top: "22%", left: "71%" },
+// 	{ image: slideshow6, size: "16vw", top: "15%", left: "40%" },
+// 	{ image: slideshow7, size: "14vw", top: "30%", left: "8%" },
+// 	{ image: slideshow8, size: "12vw", top: "43%", left: "44%" },
+// 	{ image: slideshow9, size: "13vw", top: "45%", left: "27%" },
+// 	{ image: slideshow10, size: "15vw", top: "40%", left: "78%" },
+// 	{ image: slideshow11, size: "12vw", top: "55%", left: "65%" },
+// 	{ image: slideshow12, size: "14vw", top: "64%", left: "80%" },
+// 	{ image: slideshow13, size: "14vw", top: "73%", left: "11%" },
+// 	{ image: slideshow14, size: "14vw", top: "70%", left: "40%" },
+// 	{ image: slideshow15, size: "15vw", top: "72%", left: "62%" },
+// ];
+const col1Images = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5];
+
+const col2Images = [
+	slideshow6,
+	slideshow7,
+	slideshow8,
+	slideshow9,
+	slideshow10,
+];
+
+const col3Images = [
+	slideshow11,
+	slideshow12,
+	slideshow13,
+	slideshow14,
+	slideshow15,
 ];
 
 const randomModifiers: number[] = [
@@ -56,6 +73,35 @@ function imageMove(e: MouseEvent) {
 	});
 }
 
+type ColumnProps = {
+	containerClassName?: string;
+	imageClassName?: string;
+	images: string[];
+};
+
+function GalleryImageColumn({
+	containerClassName,
+	imageClassName,
+	images,
+}: ColumnProps) {
+	return (
+		<div
+			className={`gallery-image-column flex flex-col ${
+				containerClassName || ""
+			}`}
+		>
+			{images.map((image, i) => (
+				<div
+					key={i}
+					className={`gallery-image image-container ${imageClassName || ""}`}
+				>
+					<img src={image} alt="gallery img" />
+				</div>
+			))}
+		</div>
+	);
+}
+
 export default function GallerySection() {
 	const gallerySectionRef = useRef<HTMLElement>(null);
 
@@ -75,8 +121,8 @@ export default function GallerySection() {
 			<h1 className="text-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none mix-blend-difference">
 				GALLERY
 			</h1>
-			<div className="gallery-images pointer-events-none">
-				{images.map((imageObj, i) => (
+			<div className="gallery-images container flex items-center justify-center pointer-events-none">
+				{/* {images.map((imageObj, i) => (
 					<div
 						key={i}
 						className="gallery-image image-container absolute"
@@ -89,7 +135,10 @@ export default function GallerySection() {
 					>
 						<img src={imageObj.image} alt="gallery" />
 					</div>
-				))}
+				))} */}
+				<GalleryImageColumn images={col1Images} containerClassName="column-1" />
+				<GalleryImageColumn images={col2Images} containerClassName="column-2" />
+				<GalleryImageColumn images={col3Images} containerClassName="column-3" />
 			</div>
 		</section>
 	);

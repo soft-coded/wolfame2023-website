@@ -183,9 +183,41 @@ $events-section-gap: 4rem;
 }
 
 .gallery-section {
-	margin: 100px 0;
-	height: 150vh;
-	overflow: hidden;
+	background-image: repeating-radial-gradient(
+		circle,
+		var(--clr-bg) 0% 10%,
+		var(--clr-bg-3) 10% 20%,
+		#000 20% 30%
+	);
+	// background-image: radial-gradient(
+	// 	circle,
+	// 	var(--clr-bg) 20%,
+	// 	var(--clr-bg-3) 70%,
+	// 	#000
+	// );
+
+	.gallery-images {
+		padding: 100px 0;
+		overflow: hidden;
+		gap: 5vw;
+	}
+
+	.gallery-image-column {
+		gap: 10vh;
+	}
+
+	.column-1,
+	.column-3 {
+		.gallery-image {
+			width: 20vw;
+		}
+	}
+
+	.column-2 {
+		.gallery-image {
+			width: 30vw;
+		}
+	}
 
 	.gallery-image {
 		border-radius: 10px;
