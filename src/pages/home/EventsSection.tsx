@@ -7,39 +7,40 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import slideshow1 from "../../assets/slideshow1.jpg";
-import slideshow2 from "../../assets/slideshow2.jpg";
-import slideshow3 from "../../assets/slideshow3.jpg";
-import slideshow4 from "../../assets/slideshow4.jpg";
-import slideshow5 from "../../assets/slideshow5.jpg";
-import slideshow6 from "../../assets/slideshow6.jpg";
-import slideshow7 from "../../assets/slideshow7.jpg";
-import slideshow8 from "../../assets/slideshow8.jpg";
-import slideshow9 from "../../assets/slideshow9.jpg";
-import slideshow10 from "../../assets/slideshow10.jpg";
-import slideshow11 from "../../assets/slideshow11.jpg";
-import slideshow12 from "../../assets/slideshow12.jpg";
-import slideshow13 from "../../assets/slideshow13.jpg";
-// import slideshow14 from "../../assets/slideshow14.jpg";
-// import slideshow15 from "../../assets/slideshow15.jpg";
-// import slideshow16 from "../../assets/slideshow16.jpg";
-// import slideshow17 from "../../assets/slideshow17.jpg";
-// import slideshow18 from "../../assets/slideshow18.jpg";
+import futsalPhoto from "../../assets/events/futsal.jpg";
+import tugOfWarPhoto from "../../assets/events/futsal.jpg";
+import volleyballPhoto from "../../assets/events/volleyball.jpg";
+import badmintonPhoto from "../../assets/events/badminton.jpg";
+import basketballPhoto from "../../assets/events/basketball.jpg";
+import chessPhoto from "../../assets/events/chess.jpg";
+import carromPhoto from "../../assets/events/carrom.jpg";
+import ttPhoto from "../../assets/events/table-tennis.jpg";
+import bgmiPhoto from "../../assets/events/bgmi.webp";
+import cricketPhoto from "../../assets/events/futsal.jpg";
+import powerliftingPhoto from "../../assets/events/powerlifting.webp";
+import valorantPhoto from "../../assets/events/valorant.jpg";
+import fifaPhoto from "../../assets/events/fifa.jpg";
+import scratchPng from "../../assets/scratch.png";
+import { animateTitleBg } from "../../utils";
 
 const eventsList = [
-	{ event: "Futsal", image: slideshow1, color: "#000" },
-	{ event: "Tug of war", image: slideshow3, color: "green" },
-	{ event: "Volleyball", image: slideshow2, color: "var(--clr-primary-dark)" },
-	{ event: "Badminton", image: slideshow4, color: "pink" },
-	{ event: "Basketball", image: slideshow5, color: "violet" },
-	{ event: "Chess", image: slideshow6, color: "purple" },
-	{ event: "Carrom", image: slideshow7, color: "orange" },
-	{ event: "Table tennis", image: slideshow8, color: "green" },
-	{ event: "BGMI", image: slideshow9, color: "red" },
-	{ event: "Cricket", image: slideshow10, color: "yellow" },
-	{ event: "Powerlifting", image: slideshow11, color: "red" },
-	{ event: "Valorant", image: slideshow12, color: "red" },
-	{ event: "Fifa", image: slideshow13, color: "red" },
+	{ event: "Futsal", image: futsalPhoto, color: "#000" },
+	{ event: "Tug of war", image: tugOfWarPhoto, color: "green" },
+	{
+		event: "Volleyball",
+		image: volleyballPhoto,
+		color: "var(--clr-primary-dark)",
+	},
+	{ event: "Badminton", image: badmintonPhoto, color: "pink" },
+	{ event: "Basketball", image: basketballPhoto, color: "violet" },
+	{ event: "Chess", image: chessPhoto, color: "purple" },
+	{ event: "Carrom", image: carromPhoto, color: "orange" },
+	{ event: "Table tennis", image: ttPhoto, color: "green" },
+	{ event: "BGMI", image: bgmiPhoto, color: "red" },
+	{ event: "Cricket", image: cricketPhoto, color: "yellow" },
+	{ event: "Powerlifting", image: powerliftingPhoto, color: "red" },
+	{ event: "Valorant", image: valorantPhoto, color: "red" },
+	{ event: "Fifa", image: fifaPhoto, color: "red" },
 ];
 
 function handleSlideChange(swiper: SwiperClass) {
@@ -55,15 +56,22 @@ export default function EventsSection() {
 	const eventsSectionRef = useRef<HTMLElement>(null);
 
 	useLayoutEffect(() => {
-		const ctx = gsap.context(() => {}, eventsSectionRef);
+		const ctx = gsap.context(() => {
+			animateTitleBg(".title-bg", "header");
+		}, eventsSectionRef);
 
 		return () => ctx.revert();
 	}, []);
 
 	return (
 		<section ref={eventsSectionRef} className="events-section">
-			<header className="h-screen w-screen flex items-center justify-center">
-				<h1 className="text-center">EVENTS</h1>
+			<header className="h-screen w-screen flex items-center justify-center bg-gradient">
+				<h1 className="text-center relative">
+					<div className="image-container title-bg z-0">
+						<img src={scratchPng} alt="Scratch" />
+					</div>
+					<span className="relative z-10">EVENTS</span>
+				</h1>
 			</header>
 			<div className="events-swiper-container flex items-center justify-center">
 				<Swiper
