@@ -12,8 +12,8 @@ export function animateTitleBg(
 		{
 			scrollTrigger: {
 				trigger: scrollTriggerClass,
-				start: "top top+=100px",
-				toggleActions: "restart none none reverse",
+				start: "top center-=30px",
+				scrub: true,
 			},
 			duration: 1,
 			maxHeight: "100vh",
