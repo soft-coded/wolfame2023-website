@@ -15,42 +15,32 @@ import basketballPhoto from "../../assets/events/basketball.jpg";
 import chessPhoto from "../../assets/events/chess.jpg";
 import carromPhoto from "../../assets/events/carrom.jpg";
 import ttPhoto from "../../assets/events/table-tennis.jpg";
-import bgmiPhoto from "../../assets/events/bgmi.webp";
-import cricketPhoto from "../../assets/events/futsal.jpg";
-import powerliftingPhoto from "../../assets/events/powerlifting.webp";
+import bgmiPhoto from "../../assets/events/bgmi.jpg";
+import cricketPhoto from "../../assets/events/cricket.jpg";
+import powerliftingPhoto from "../../assets/events/powerlifting.jpg";
 import valorantPhoto from "../../assets/events/valorant.jpg";
 import fifaPhoto from "../../assets/events/fifa.jpg";
 import scratchPng from "../../assets/scratch.png";
 import { animateTitleBg } from "../../utils";
 
 const eventsList = [
-	{ event: "Futsal", image: futsalPhoto, color: "#000" },
-	{ event: "Tug of war", image: tugOfWarPhoto, color: "green" },
+	{ event: "Futsal", image: futsalPhoto },
+	{ event: "Tug of war", image: tugOfWarPhoto },
 	{
 		event: "Volleyball",
 		image: volleyballPhoto,
-		color: "var(--clr-primary-dark)",
 	},
-	{ event: "Badminton", image: badmintonPhoto, color: "pink" },
-	{ event: "Basketball", image: basketballPhoto, color: "violet" },
-	{ event: "Chess", image: chessPhoto, color: "purple" },
-	{ event: "Carrom", image: carromPhoto, color: "orange" },
-	{ event: "Table tennis", image: ttPhoto, color: "green" },
-	{ event: "BGMI", image: bgmiPhoto, color: "red" },
-	{ event: "Cricket", image: cricketPhoto, color: "yellow" },
-	{ event: "Powerlifting", image: powerliftingPhoto, color: "red" },
-	{ event: "Valorant", image: valorantPhoto, color: "red" },
-	{ event: "Fifa", image: fifaPhoto, color: "red" },
+	{ event: "Badminton", image: badmintonPhoto },
+	{ event: "Basketball", image: basketballPhoto },
+	{ event: "Chess", image: chessPhoto },
+	{ event: "Carrom", image: carromPhoto },
+	{ event: "Table tennis", image: ttPhoto },
+	{ event: "BGMI", image: bgmiPhoto },
+	{ event: "Cricket", image: cricketPhoto },
+	{ event: "Powerlifting", image: powerliftingPhoto },
+	{ event: "Valorant", image: valorantPhoto },
+	{ event: "Fifa", image: fifaPhoto },
 ];
-
-function handleSlideChange(swiper: SwiperClass) {
-	const swiperContainer = document.querySelector<HTMLDivElement>(
-		".events-swiper-container"
-	);
-	if (!swiperContainer) return;
-
-	swiperContainer.style.backgroundColor = eventsList[swiper.activeIndex].color;
-}
 
 export default function EventsSection() {
 	const eventsSectionRef = useRef<HTMLElement>(null);
@@ -89,7 +79,6 @@ export default function EventsSection() {
 					// spaceBetween={50}
 					modules={[EffectCoverflow]}
 					className="events-swiper"
-					onSlideChange={handleSlideChange}
 				>
 					{eventsList.map((eventObj, i) => (
 						<SwiperSlide
