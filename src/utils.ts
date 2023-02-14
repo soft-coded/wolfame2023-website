@@ -21,3 +21,18 @@ export function animateTitleBg(
 		}
 	);
 }
+
+export function imageTilt(e: MouseEvent, imageClass: string) {
+	const { offsetX, offsetY, target } = e;
+	const { clientHeight, clientWidth } = target as HTMLElement;
+	const xPos = offsetX / clientWidth - 0.5;
+	const yPos = offsetY / clientHeight - 0.5;
+	gsap.to(imageClass, {
+		duration: 0.5,
+		x: xPos * 20,
+		y: yPos * 30,
+		rotationX: -yPos * 30,
+		rotationY: xPos * 30,
+		ease: "power4.out",
+	});
+}

@@ -1,6 +1,5 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
-import { Swiper as SwiperClass } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper";
 import "swiper/css";

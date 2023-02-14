@@ -20,6 +20,7 @@ import slideshow15 from "../../assets/slideshow15.jpg";
 import slideshow16 from "../../assets/slideshow16.jpg";
 import slideshow17 from "../../assets/slideshow17.jpg";
 import slideshow18 from "../../assets/slideshow18.jpg";
+import { imageTilt } from "../../utils";
 
 const topSlideshow = [
 	slideshow1,
@@ -45,35 +46,21 @@ const bottomSlideshow = [
 	slideshow18,
 ];
 
-function imageTilt(e: MouseEvent) {
-	const { offsetX, offsetY, target } = e;
-	const { clientHeight, clientWidth } = target as HTMLElement;
-	const xPos = offsetX / clientWidth - 0.5;
-	const yPos = offsetY / clientHeight - 0.5;
-	gsap.to(".logo", {
-		duration: 0.5,
-		x: xPos * 20,
-		y: yPos * 30,
-		rotationX: -yPos * 30,
-		rotationY: xPos * 30,
-		ease: "power4.out",
-	});
-}
-
 export default function HeroSection() {
 	const heroSectionRef = useRef<HTMLElement>(null);
 
 	useLayoutEffect(() => {
 		if (!heroSectionRef.current) return;
 		const heroSection = heroSectionRef.current;
+		const heroImageTilt = (e: MouseEvent) => imageTilt(e, ".logo");
 
 		const ctx = gsap.context(() => {
-			heroSection.addEventListener("mousemove", imageTilt);
+			heroSection.addEventListener("mousemove", heroImageTilt);
 		}, heroSectionRef);
 
 		return () => {
 			ctx.revert();
-			heroSection.removeEventListener("mousemove", imageTilt);
+			heroSection.removeEventListener("mousemove", heroImageTilt);
 		};
 	}, []);
 

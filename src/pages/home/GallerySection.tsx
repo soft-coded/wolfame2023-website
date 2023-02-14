@@ -17,7 +17,7 @@ import slideshow13 from "../../assets/slideshow13.jpg";
 import slideshow14 from "../../assets/slideshow14.jpg";
 import slideshow15 from "../../assets/slideshow15.jpg";
 import scratchPng from "../../assets/scratch.png";
-import { animateTitleBg } from "../../utils";
+import { animateTitleBg, imageTilt } from "../../utils";
 
 const col1Images = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5];
 
@@ -50,7 +50,7 @@ function GalleryImageColumn({
 }: ColumnProps) {
 	return (
 		<div
-			className={`gallery-image-column flex flex-col ${
+			className={`gallery-image-column flex flex-col pointer-events-none ${
 				containerClassName || ""
 			}`}
 		>
@@ -68,13 +68,28 @@ function GalleryImageColumn({
 
 export default function GallerySection() {
 	const gallerySectionRef = useRef<HTMLElement>(null);
+	const galleryColumnsContainerRef = useRef<HTMLDivElement>(null);
 
 	useLayoutEffect(() => {
+		if (!gallerySectionRef.current || !galleryColumnsContainerRef.current)
+			return;
+
+		const galleryImageTilt = (e: MouseEvent) => imageTilt(e, ".gallery-image");
+		const galleryColumnsContainer = galleryColumnsContainerRef.current;
+
 		const ctx = gsap.context(() => {
 			animateTitleBg(".gallery-section .title-bg", ".gallery-section header");
 		}, gallerySectionRef);
 
-		return () => ctx.revert();
+		galleryColumnsContainer.addEventListener("mousemove", galleryImageTilt);
+
+		return () => {
+			ctx.revert();
+			galleryColumnsContainer.removeEventListener(
+				"mousemove",
+				galleryImageTilt
+			);
+		};
 	}, []);
 
 	return (
@@ -87,7 +102,10 @@ export default function GallerySection() {
 					<span className="relative z-10">GALLERY</span>
 				</h1>
 			</header>
-			<div className="gallery-images container flex items-center justify-between pointer-events-none">
+			<div
+				ref={galleryColumnsContainerRef}
+				className="gallery-images container flex items-center justify-between"
+			>
 				<GalleryImageColumn images={col1Images} containerClassName="column-1" />
 				<GalleryImageColumn images={col2Images} containerClassName="column-2" />
 				<GalleryImageColumn images={col3Images} containerClassName="column-3" />
