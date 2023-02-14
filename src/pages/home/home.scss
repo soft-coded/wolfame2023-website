@@ -111,17 +111,6 @@ $events-section-gap: 4rem;
 		backface-visibility: hidden;
 	}
 
-	.background-image {
-		position: relative;
-
-		&::before {
-			content: "";
-			position: absolute;
-			inset: 0;
-			background-color: #00000084;
-		}
-	}
-
 	.container {
 		position: relative;
 		z-index: 1;
@@ -130,11 +119,11 @@ $events-section-gap: 4rem;
 	}
 
 	.about-wolfame {
-		background-image: url(../../assets/slideshow3.jpg);
+		background-image: url(../../assets/wolfame.jpg);
 	}
 
 	.about-hall {
-		background-image: url(../../assets/slideshow5.jpg);
+		background-image: url(../../assets/hall.jpg);
 	}
 }
 

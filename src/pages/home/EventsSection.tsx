@@ -8,7 +8,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import futsalPhoto from "../../assets/events/futsal.jpg";
-import tugOfWarPhoto from "../../assets/events/futsal.jpg";
+import tugOfWarPhoto from "../../assets/events/tug-of-war.jpg";
 import volleyballPhoto from "../../assets/events/volleyball.jpg";
 import badmintonPhoto from "../../assets/events/badminton.jpg";
 import basketballPhoto from "../../assets/events/basketball.jpg";
