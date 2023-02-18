@@ -102,13 +102,24 @@ export default function GallerySection() {
 					<span className="relative z-10">GALLERY</span>
 				</h1>
 			</header>
-			<div
-				ref={galleryColumnsContainerRef}
-				className="gallery-images container flex items-center justify-between"
-			>
-				<GalleryImageColumn images={col1Images} containerClassName="column-1" />
-				<GalleryImageColumn images={col2Images} containerClassName="column-2" />
-				<GalleryImageColumn images={col3Images} containerClassName="column-3" />
+			<div className="gallery-images-wrapper">
+				<div
+					ref={galleryColumnsContainerRef}
+					className="gallery-images container flex items-center justify-between"
+				>
+					<GalleryImageColumn
+						images={col1Images}
+						containerClassName="column-1"
+					/>
+					<GalleryImageColumn
+						images={col2Images}
+						containerClassName="column-2"
+					/>
+					<GalleryImageColumn
+						images={col3Images}
+						containerClassName="column-3"
+					/>
+				</div>
 			</div>
 		</section>
 	);
