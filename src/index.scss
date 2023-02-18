@@ -19,6 +19,19 @@ $WOLFAME-scale: 1.3;
 	scrollbar-width: thin;
 }
 
+*::-webkit-scrollbar {
+	width: 0.3vw;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: red;
+	border-radius: 100px;
+}
+
+*::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
 :root {
 	--clr-primary: hsla(358, 72%, 49%, 1);
 	--clr-primary-dark: hsla(358, 72%, 36%, 1);
