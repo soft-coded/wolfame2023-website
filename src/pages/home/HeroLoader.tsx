@@ -27,6 +27,7 @@ export default function HeroLoader({
 	return (
 		<section className="hero-loader will-change-transform fixed inset-0">
 			<div className="hero-loader-text w-full h-full flex items-center justify-center flex-col">
+				{/* eslint-disable-next-line */}
 				<h1 className="WOLFAME"></h1>
 				<h3>{loadedPercent}%</h3>
 			</div>
