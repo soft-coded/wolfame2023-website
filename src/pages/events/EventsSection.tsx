@@ -13,8 +13,8 @@ function getEventsData() {
 
 export default function EventsSection() {
 	return (
-		<section className="events-section">
-			<div className="container">
+		<section className="events-section pt-4 pb-4">
+			<div className="container flex flex-col gap-12">
 				{getEventsData().map((event, i) => (
 					<EventCard key={i} {...event} />
 				))}

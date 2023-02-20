@@ -17,5 +17,21 @@
 	}
 
 	.events-section {
+		box-shadow: 0 0 70px 100px black;
+
+		.event-card {
+			// background: radial-gradient(var(--clr-bg), var(--clr-bg-3));
+			background: var(--clr-bg);
+			padding: 30px 50px;
+
+			h2 {
+				font-size: 3vw;
+			}
+
+			ul {
+				list-style-type: disc;
+				font-size: 1.3vw;
+			}
+		}
 	}
 }
