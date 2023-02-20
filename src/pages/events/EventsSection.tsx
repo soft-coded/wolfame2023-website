@@ -28,6 +28,8 @@ export default function EventsSection() {
 				gsap.to(card, {
 					y: 0,
 					opacity: 1,
+					ease: "power2.out",
+					duration: 0.5,
 					scrollTrigger: {
 						trigger: card,
 						start: "top top+=75%",
