@@ -1,6 +1,22 @@
+import futsalPhoto from "../../assets/events/futsal.jpg";
+import tugOfWarPhoto from "../../assets/events/tug-of-war.jpg";
+import volleyballPhoto from "../../assets/events/volleyball.jpg";
+import badmintonPhoto from "../../assets/events/badminton.jpg";
+import basketballPhoto from "../../assets/events/basketball.jpg";
+import chessPhoto from "../../assets/events/chess.jpg";
+import carromPhoto from "../../assets/events/carrom.jpg";
+import ttPhoto from "../../assets/events/table-tennis.jpg";
+import bgmiPhoto from "../../assets/events/bgmi.jpg";
+import cricketPhoto from "../../assets/events/cricket.jpg";
+import powerliftingPhoto from "../../assets/events/powerlifting.jpg";
+import valorantPhoto from "../../assets/events/valorant.jpg";
+import fifaPhoto from "../../assets/events/fifa.jpg";
+
 export type EventType = {
 	name: string;
 	rules: string[];
+	eventKey?: string;
+	photo: string;
 };
 
 export type EventsDataType = {
@@ -14,7 +30,7 @@ const eventsData: EventsDataType = {
 			"At most 2 teams can participate from each hall/hostel.",
 			"Each team will be made of 6+2 players.",
 			"Rolling substitution is allowed.",
-			"Game length:<br /><br />Group stage - Each half 10 minutes<br />Semi-finals - Each half 15 minutes<br />Final - Each half 20 minutes",
+			"Game length:<br />Group stage - Each half 10 minutes<br />Semi-finals - Each half 15 minutes<br />Final - Each half 20 minutes",
 			"No one is allowed to play for more than one team.",
 			"Teams will be warned at most 2 times for shooting above a certain height.",
 			"The opponent's goal post, and the same will lead to a penalty at the third time (not considering deflections). In this situation, the assistant referee's call will be final.",
@@ -22,6 +38,7 @@ const eventsData: EventsDataType = {
 			"A single yellow card will lead to suspension for 2:30 minutes, and a red card will lead to a complete suspension from the match.",
 			"In case of any dispute, referee's call will be final.",
 		],
+		photo: futsalPhoto,
 	},
 	tugOfWar: {
 		name: "TUG OF WAR",
@@ -33,6 +50,7 @@ const eventsData: EventsDataType = {
 			"Any player found touching or lying on the ground for more than 5 seconds will be given a foul and will lead to a loss of the team.",
 			"In case of any dispute, referee's call will be final.",
 		],
+		photo: tugOfWarPhoto,
 	},
 	badminton: {
 		name: "BADMINTON",
@@ -45,6 +63,7 @@ const eventsData: EventsDataType = {
 			"Scoring system will be decided by the referee based on the stage of matches.",
 			"BWF rules will be followed during all matches.",
 		],
+		photo: badmintonPhoto,
 	},
 	tableTennis: {
 		name: "TABLE TENNIS",
@@ -57,6 +76,7 @@ const eventsData: EventsDataType = {
 			"Scoring system will be decided by the referee based on the stage of matches.",
 			"Latest ITTF rules will be followed during the match.",
 		],
+		photo: ttPhoto,
 	},
 	basketball: {
 		name: "BASKETBALL",
@@ -72,6 +92,7 @@ const eventsData: EventsDataType = {
 			"A team is in a penalty situation after it has committed 6 fouls.",
 			"All games will be played according to FIBA official 3x3 rules.",
 		],
+		photo: basketballPhoto,
 	},
 	volleyball: {
 		name: "VOLLEYBALL",
@@ -85,6 +106,20 @@ const eventsData: EventsDataType = {
 			"Exception: if it is the'hand or foot, the entire hand or entire foot must cross for it to be a violation.",
 			"In case of any dispute, referee's call will be final.",
 		],
+		photo: volleyballPhoto,
+	},
+	cricket: {
+		name: "SHORT PITCH CRICKET",
+		rules: [
+			"Team will consist of 8 players (7+1).",
+			"All the matches will be of 5 overs.",
+			"Every team should give their squad list to their respective JMCR.",
+			"No player can play for two different teams.",
+			"A maximum of 3 players can be changed in a team throughout	the tournament.",
+			"Batting and bowling rules will be informed before the match.",
+			"In case of any dispute the umpire's decision shall be final.",
+		],
+		photo: cricketPhoto,
 	},
 	chess: {
 		name: "CHESS",
@@ -94,6 +129,7 @@ const eventsData: EventsDataType = {
 			"The rules will be according to FIDE.",
 			"The preliminary matches will be of 10min+5sec increment and final matches will be of 20min+3sec increment.",
 		],
+		photo: chessPhoto,
 	},
 	carrom: {
 		name: "CARROM",
@@ -111,6 +147,7 @@ const eventsData: EventsDataType = {
 			"A game consists of 20 points or five boards, whichever comes first.",
 			"In case of any dispute, organizer's decision will be final.",
 		],
+		photo: carromPhoto,
 	},
 	powerlifting: {
 		name: "POWERLIFTING",
@@ -123,7 +160,7 @@ const eventsData: EventsDataType = {
 			"There will be 4 judges, who will decide whether the lift was proper or not.",
 			"A lift will be considered successful if at least 3 out of the 4 judges vote in its favour.",
 			"The participant shall be disqualified if he or she fails in all the rounds.",
-			"The right technique for deadlifting is described below -<br /><br />The bar cannot travel downward before reaching the final position.<br />You must stand erect with the shoulders back.<br />You must stand with your knees straight at the completion of the lift.<br />You cannot have the bar rest on the thighs during the lift.<br />You cannot step forward or back or move the feet laterally during the 'up phase'.<br />You must return the bar to the floor while maintaining control with both hands.<br />You must listen to the referee's command- 'DOWN' — that is when you lower the weight.",
+			"The right technique for deadlifting is described below -<br />The bar cannot travel downward before reaching the final position.<br />You must stand erect with the shoulders back.<br />You must stand with your knees straight at the completion of the lift.<br />You cannot have the bar rest on the thighs during the lift.<br />You cannot step forward or back or move the feet laterally during the 'up phase'.<br />You must return the bar to the floor while maintaining control with both hands.<br />You must listen to the referee's command- 'DOWN' — that is when you lower the weight.",
 			"No straps can be used to aid your grip on deadlifts. Must use either double overhand, mixed grip or hook grip.",
 			"RULES FOR SQUATS:-",
 			"There will be 3 rounds in this event.",
@@ -132,14 +169,16 @@ const eventsData: EventsDataType = {
 			"There will be 4 judges who will decide whether the squat was proper or not.",
 			"A squat will be considered successful if at li ast 3 out of the 4 judges vote in its favour.",
 			"The participant shall be disqualified if he or she fail in all the rounds.",
-			"The right technique for powerlifting squat is described below -<br/><br/>You need to bend your knees and lower the body until the top surface of the leg (upper quad at the hip joint) is lower than the top of the knee.<br />You need to have your knees locked at both the beginning and end of the movement.<br />You can't step forward or backward, or move your feet: laterally while squatting — you can't lose your balance.<br />You must listen to the referee's commands- 'SQUAT and 'RACK' to start and finish the squat respectively.<br />You can't touch your elbows or arms with your legs which deliberately supports the movement.<br />You can't 'double bounce' at the bottom (go up, the down then up again), or have any downward movement of the bar.",
+			"The right technique for powerlifting squat is described below -<br />You need to bend your knees and lower the body until the top surface of the leg (upper quad at the hip joint) is lower than the top of the knee.<br />You need to have your knees locked at both the beginning and end of the movement.<br />You can't step forward or backward, or move your feet: laterally while squatting — you can't lose your balance.<br />You must listen to the referee's commands- 'SQUAT and 'RACK' to start and finish the squat respectively.<br />You can't touch your elbows or arms with your legs which deliberately supports the movement.<br />You can't 'double bounce' at the bottom (go up, the down then up again), or have any downward movement of the bar.",
 			"Criteria for deciding the winners: The sum of weights successfully lifted in all the 6 rounds (i.e. 3 rounds of deadlifts and 3 rounds of squats) will be added and divided by the body weight of the lifter to calculate a ratio. The participants will be awarded with a position according to this ratio, where the participant with the maximum ratio will be awarded the 1st position and so on.",
 			"The entire event will be recorded.",
 		],
+		photo: powerliftingPhoto,
 	},
 	bgmi: {
-		name: "BATTLEGROUND MOBILE INDIA",
+		name: "BATTLEGROUNDS MOBILE INDIA",
 		rules: [],
+		photo: bgmiPhoto,
 	},
 	fifa: {
 		name: "FIFA",
@@ -155,6 +194,7 @@ const eventsData: EventsDataType = {
 			"Use of abusive words/misconduct will result in immediate disqualification.",
 			"In case of any dispute the decision of the moderators will be final.",
 		],
+		photo: fifaPhoto,
 	},
 	valorant: {
 		name: "VALORANT",
@@ -169,6 +209,7 @@ const eventsData: EventsDataType = {
 			"Both teams may agree to restart a map prior to Round 1 beginning if the latency is unreasonable for the server selected.",
 			"Any team member who is displaying excessive toxic behaviour during matches may also be disqualified at the discretion of a tournament administrator.",
 		],
+		photo: valorantPhoto,
 	},
 };
 

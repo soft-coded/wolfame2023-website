@@ -5,6 +5,7 @@ function getEventsData() {
 	let eventsDataList = [];
 
 	for (let event in eventsData) {
+		eventsData[event].eventKey = event;
 		eventsDataList.push(eventsData[event]);
 	}
 
@@ -13,10 +14,10 @@ function getEventsData() {
 
 export default function EventsSection() {
 	return (
-		<section className="events-section pt-4 pb-4">
+		<section className="events-section pt-12 pb-12">
 			<div className="container flex flex-col gap-12">
-				{getEventsData().map((event, i) => (
-					<EventCard key={i} {...event} />
+				{getEventsData().map((event) => (
+					<EventCard key={event.eventKey} {...event} />
 				))}
 			</div>
 		</section>

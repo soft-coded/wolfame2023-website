@@ -18,11 +18,34 @@
 
 	.events-section {
 		box-shadow: 0 0 70px 100px black;
+		background: linear-gradient(
+			to bottom,
+			black,
+			var(--clr-bg) 10%,
+			95%,
+			black
+		);
 
 		.event-card {
-			// background: radial-gradient(var(--clr-bg), var(--clr-bg-3));
 			background: var(--clr-bg);
 			padding: 30px 50px;
+			min-height: 600px;
+			position: relative;
+			border-radius: 10px;
+			overflow: hidden;
+
+			&::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				z-index: 1;
+				background: rgba(0, 0, 0, 0.402);
+			}
+
+			.content {
+				position: relative;
+				z-index: 2;
+			}
 
 			h2 {
 				font-size: 3vw;
@@ -31,6 +54,7 @@
 			ul {
 				list-style-type: disc;
 				font-size: 1.3vw;
+				font-weight: 500;
 			}
 		}
 	}
