@@ -4,6 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 import HomePage from "./pages/home";
+import EventsPage from "./pages/events";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +15,7 @@ export default function App() {
 	return (
 		<Routes>
 			<Route path="/" element={<HomePage />} />
+			<Route path="/events" element={<EventsPage />}></Route>
 		</Routes>
 	);
 }

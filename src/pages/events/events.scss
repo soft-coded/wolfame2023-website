@@ -1,0 +1,18 @@
+@import "../../constants.scss";
+
+.events-page {
+	.events-hero-section {
+		background-image: url(../../assets/events-page/hero-bg.jpg);
+
+		.hero-title {
+			font-size: 8vw;
+			color: red;
+			-webkit-text-stroke: 3px var(--clr-text-stroke);
+
+			@media (max-width: $mobile-width) {
+				-webkit-text-stroke-width: 2px;
+				font-size: 16vw;
+			}
+		}
+	}
+}

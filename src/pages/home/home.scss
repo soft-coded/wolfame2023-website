@@ -54,8 +54,7 @@ $events-section-gap: 4rem;
 		opacity: 0.9;
 		mix-blend-mode: difference;
 		color: red;
-		// letter-spacing: 10px;
-		-webkit-text-stroke: 3px rgb(255, 119, 119);
+		-webkit-text-stroke: 3px var(--clr-text-stroke);
 	}
 
 	.slideshow {
