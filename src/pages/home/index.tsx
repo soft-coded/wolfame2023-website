@@ -13,6 +13,9 @@ function heroLoadingAnim() {
 	// make the logo and title ready for the intro anim
 	gsap.set(".hero-section .logo", { scale: 1.5, opacity: 0 });
 	gsap.set(".hero-section .title", { opacity: 0 });
+	document.documentElement.style.overflowY = "hidden";
+	const body = document.getElementsByTagName("body")[0];
+	body.style.overflowY = "hidden";
 
 	// pause the slideshow animations
 	const slideShows = document.querySelectorAll<HTMLDivElement>(".slideshow");
@@ -45,7 +48,6 @@ function heroLoadingAnim() {
 		onComplete: () => {
 			// re-enable scrolling
 			document.documentElement.style.overflowY = "auto";
-			const body = document.getElementsByTagName("body")[0];
 			body.style.overflowY = "auto";
 
 			// play the slideshow animation

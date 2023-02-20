@@ -1,7 +1,7 @@
 @import "../../constants.scss";
 
 .events-page {
-	.events-hero-section {
+	.hero-section {
 		background-image: url(../../assets/events-page/hero-bg.jpg);
 
 		.hero-title {
@@ -14,5 +14,8 @@
 				font-size: 16vw;
 			}
 		}
+	}
+
+	.events-section {
 	}
 }
