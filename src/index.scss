@@ -61,6 +61,10 @@ body {
 	background: #000;
 	color: #fff;
 	font-size: constants.$font-p-lg;
+
+	@media (max-width: constants.$mobile-width) {
+		font-size: constants.$font-p-sm;
+	}
 }
 
 img {
@@ -81,32 +85,55 @@ h3,
 h4,
 h5,
 h6 {
-	// font-family: "DM Serif Display", serif;
 	font-weight: 700;
 }
 
 h1 {
 	font-size: constants.$font-h1-lg;
+
+	@media (max-width: constants.$mobile-width) {
+		font-size: constants.$font-h1-sm;
+	}
 }
 
 h2 {
 	font-size: constants.$font-h2-lg;
+
+	@media (max-width: constants.$mobile-width) {
+		font-size: constants.$font-h2-sm;
+	}
 }
 
 h3 {
 	font-size: constants.$font-h3-lg;
+
+	@media (max-width: constants.$mobile-width) {
+		font-size: constants.$font-h3-sm;
+	}
 }
 
 h4 {
 	font-size: constants.$font-h4-lg;
+
+	@media (max-width: constants.$mobile-width) {
+		font-size: constants.$font-h4-sm;
+	}
 }
 
 h5 {
 	font-size: constants.$font-h5-lg;
+
+	@media (max-width: constants.$mobile-width) {
+		font-size: constants.$font-h5-sm;
+	}
 }
 
 h6 {
 	font-size: constants.$font-h6-lg;
+
+	@media (max-width: constants.$mobile-width) {
+		font-size: constants.$font-h6-sm;
+	}
 }
 
 ul,
