@@ -76,7 +76,13 @@ img {
 
 a,
 button {
-	all: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	color: inherit;
+	border: none;
+	text-decoration: none;
+	background: none;
 }
 
 h1,

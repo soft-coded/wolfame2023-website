@@ -6,7 +6,7 @@ import gmailSvg from "../../assets/svgs/gmail.svg";
 import phoneSvg from "../../assets/svgs/phone.svg";
 import "./index.scss";
 
-const emails = ["wolfendenhall53@gmail.com", "trilokij5@gmail.com"];
+const emails = ["contactwolfame@gmail.com", "trilokij5@gmail.com"];
 
 const phoneNumbers = ["+91 8920557192", "+91 6202595022", "+91 9928966956"];
 

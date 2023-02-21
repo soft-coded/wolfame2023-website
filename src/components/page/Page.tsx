@@ -1,4 +1,5 @@
 import Footer from "../footer";
+import Navbar from "../navbar";
 
 type PageProps = {
 	children: React.ReactNode;
@@ -7,6 +8,7 @@ type PageProps = {
 export default function Page({ children }: PageProps) {
 	return (
 		<main>
+			<Navbar />
 			{children}
 			<Footer />
 		</main>

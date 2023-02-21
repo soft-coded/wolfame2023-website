@@ -1,0 +1,44 @@
+$transition-details: 0.2s ease-out;
+
+.navbar {
+	top: 20px;
+	backdrop-filter: blur(5px);
+	width: 40vw;
+	margin: auto;
+
+	.container {
+		background-color: rgba(32, 32, 32, 0.5);
+		padding: 10px;
+		border-radius: 6px;
+	}
+
+	a {
+		display: block;
+		position: static;
+		font-weight: 400;
+		font-size: 1.2vw;
+		text-align: center;
+		cursor: pointer;
+		user-select: none;
+		width: 12vw;
+		transition: text-shadow $transition-details, color $transition-details;
+
+		@media (hover: hover) {
+			&:hover {
+				color: rgb(255, 61, 61);
+				text-shadow: 1.5px 1.5px 0 rgb(255, 61, 61);
+			}
+		}
+
+		&.active {
+			color: rgb(255, 61, 61);
+			font-weight: 700;
+
+			@media (hover: hover) {
+				&:hover {
+					text-shadow: none;
+				}
+			}
+		}
+	}
+}
