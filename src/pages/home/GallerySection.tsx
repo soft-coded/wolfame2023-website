@@ -17,7 +17,8 @@ import slideshow13 from "../../assets/slideshow13.jpg";
 import slideshow14 from "../../assets/slideshow14.jpg";
 import slideshow15 from "../../assets/slideshow15.jpg";
 import scratchPng from "../../assets/scratch.png";
-import { animateTitleBg, imageTilt } from "../../utils";
+import { animateTitleBg, imageTilt } from "../../utils/functions";
+import constants from "../../utils/constants";
 
 const col1Images = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5];
 
@@ -107,18 +108,27 @@ export default function GallerySection() {
 					ref={galleryColumnsContainerRef}
 					className="gallery-images container flex items-center justify-between"
 				>
-					<GalleryImageColumn
-						images={col1Images}
-						containerClassName="column-1"
-					/>
-					<GalleryImageColumn
-						images={col2Images}
-						containerClassName="column-2"
-					/>
-					<GalleryImageColumn
-						images={col3Images}
-						containerClassName="column-3"
-					/>
+					{constants.isMobile ? (
+						<GalleryImageColumn
+							images={[...col1Images, ...col2Images, ...col3Images]}
+							containerClassName="column-2"
+						/>
+					) : (
+						<>
+							<GalleryImageColumn
+								images={col1Images}
+								containerClassName="column-1"
+							/>
+							<GalleryImageColumn
+								images={col2Images}
+								containerClassName="column-2"
+							/>
+							<GalleryImageColumn
+								images={col3Images}
+								containerClassName="column-3"
+							/>
+						</>
+					)}
 				</div>
 			</div>
 		</section>

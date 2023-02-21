@@ -20,7 +20,7 @@ import slideshow15 from "../../assets/slideshow15.jpg";
 import slideshow16 from "../../assets/slideshow16.jpg";
 import slideshow17 from "../../assets/slideshow17.jpg";
 import slideshow18 from "../../assets/slideshow18.jpg";
-import { imageTilt } from "../../utils";
+import { imageTilt } from "../../utils/functions";
 
 const topSlideshow = [
 	slideshow1,

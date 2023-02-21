@@ -20,7 +20,7 @@ import powerliftingPhoto from "../../assets/events/powerlifting.jpg";
 import valorantPhoto from "../../assets/events/valorant.jpg";
 import fifaPhoto from "../../assets/events/fifa.jpg";
 import scratchPng from "../../assets/scratch.png";
-import { animateTitleBg } from "../../utils";
+import { animateTitleBg } from "../../utils/functions";
 
 const eventsList = [
 	{ event: "Futsal", image: futsalPhoto },
@@ -85,7 +85,7 @@ export default function EventsSection() {
 							className="event-slide image-container relative"
 						>
 							<img src={eventObj.image} alt={eventObj.event} />
-							<h4 className="slide-title">{eventObj.event}</h4>
+							<h4 className="slide-title text-center">{eventObj.event}</h4>
 						</SwiperSlide>
 					))}
 				</Swiper>
