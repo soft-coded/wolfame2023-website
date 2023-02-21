@@ -13,12 +13,14 @@ export default function EventCard(props: EventType) {
 			}}
 		>
 			<div className="content flex flex-col gap-6">
-				<h2>{props.name}</h2>
-				<ul className="flex flex-col gap-4">
-					{props.rules.map((rule, i) => (
-						<li key={i} dangerouslySetInnerHTML={{ __html: rule }} />
-					))}
-				</ul>
+				<h4 className="break-words">{props.name}</h4>
+				<h6>
+					<ul className="flex flex-col gap-4">
+						{props.rules.map((rule, i) => (
+							<li key={i} dangerouslySetInnerHTML={{ __html: rule }} />
+						))}
+					</ul>
+				</h6>
 			</div>
 		</div>
 	);
