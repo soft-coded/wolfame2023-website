@@ -1,14 +1,15 @@
 import HeroSection from "./HeroSection";
 import EventsSection from "./EventsSection";
-import Footer from "../../components/footer";
+import Page from "../../components/page/Page";
 import "./events.scss";
 
 export default function EventsPage() {
 	return (
-		<div className="events-page">
-			<HeroSection />
-			<EventsSection />
-			<Footer />
-		</div>
+		<Page>
+			<div className="events-page">
+				<HeroSection />
+				<EventsSection />
+			</div>
+		</Page>
 	);
 }

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 
 import HeroLoader from "./HeroLoader";
@@ -6,7 +6,7 @@ import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import EventsSection from "./EventsSection";
 import GallerySection from "./GallerySection";
-import Footer from "../../components/footer";
+import Page from "../../components/page/Page";
 import "./home.scss";
 
 function heroLoadingAnim() {
@@ -61,13 +61,14 @@ export default function HomePage() {
 	const homepageRef = useRef<HTMLDivElement>(null);
 
 	return (
-		<div ref={homepageRef} className="homepage">
-			<HeroLoader heroLoadingAnim={heroLoadingAnim} />
-			<HeroSection />
-			<AboutSection />
-			<EventsSection />
-			<GallerySection />
-			<Footer />
-		</div>
+		<Page>
+			<div ref={homepageRef} className="homepage">
+				<HeroLoader heroLoadingAnim={heroLoadingAnim} />
+				<HeroSection />
+				<AboutSection />
+				<EventsSection />
+				<GallerySection />
+			</div>
+		</Page>
 	);
 }
