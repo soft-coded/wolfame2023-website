@@ -5,13 +5,11 @@
 		background-image: url(../../assets/events-page/hero-bg.jpg);
 
 		.hero-title {
-			// font-size: 8vw;
 			color: red;
 			-webkit-text-stroke: 3px var(--clr-text-stroke);
 
 			@media (max-width: constants.$mobile-width) {
 				-webkit-text-stroke-width: 2px;
-				// font-size: 16vw;
 			}
 		}
 	}
@@ -34,6 +32,10 @@
 			border-radius: 10px;
 			overflow: hidden;
 
+			@media (max-width: constants.$mobile-width) {
+				padding: 30px 40px;
+			}
+
 			&::before {
 				content: "";
 				position: absolute;
@@ -47,13 +49,8 @@
 				z-index: 2;
 			}
 
-			h2 {
-				// font-size: 3vw;
-			}
-
 			ul {
 				list-style-type: disc;
-				// font-size: 1.3vw;
 				font-weight: 500;
 			}
 		}

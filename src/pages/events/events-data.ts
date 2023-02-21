@@ -177,7 +177,19 @@ const eventsData: EventsDataType = {
 	},
 	bgmi: {
 		name: "BATTLEGROUNDS MOBILE INDIA",
-		rules: [],
+		rules: [
+			"It is a 4(+1) player team tournament. A 4 man-starter roster and up to 1 substitute.",
+			"Emulators are not allowed in any game mode organized. Any game modifying tools except 'GFX tool' is not allowed.",
+			"Players can play on android/iOS/phones only.",
+			"Any use of unfair means such as aimbot, trigger bot, ESP etc. will result in disqualification.",
+			"If a team/player fail to join the room in time, their squad/they will be given 0 points for it.",
+			"The exploitation of bugs that hinders fair play will result in disqualification.",
+			"For the tiebreaker of the points, position points will be considered for breaking the tie.",
+			"For the further tiebreaker, number of chicken dinners will be considered.",
+			"Organizers would not be held responsible for connectivity issues on the participant's side.",
+			"POINT SYSTEM:<br />Kill - 1 point.<br />1st - 15 points.<br />2nd - 12 points.<br />3rd - 10 points.<br />4th - 8 points.<br />5th - 6 points.<br />6th - 4 points.<br />7th - 2 points.<br />8th - 12th - 1 point.<br />13th - 16th - 0 point.",
+			"MAPS: ERANGLE, MIRAMAR, SANHOK, TDM.",
+		],
 		photo: bgmiPhoto,
 	},
 	fifa: {
