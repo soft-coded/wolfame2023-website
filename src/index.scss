@@ -235,3 +235,24 @@ section {
 		}
 	}
 }
+
+.bg-gradient {
+	background-image: radial-gradient(
+		60% 55% at 50% 50%,
+		var(--clr-bg) 20%,
+		var(--clr-bg-3) 75%,
+		#000
+	);
+}
+
+.title-bg {
+	@apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10;
+	width: 40vw;
+	overflow: hidden;
+
+	@media (max-width: constants.$mobile-width) {
+		width: 100vw;
+		height: 100vh;
+		overflow: visible;
+	}
+}

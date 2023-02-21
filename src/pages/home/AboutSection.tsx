@@ -68,7 +68,6 @@ export default function AboutSection() {
 		<section ref={aboutSectionRef} className="about-section">
 			<PanelDiv className="about-intro bg-gradient">
 				<h3 className="heading text-center relative">
-					{/* <PawSvg className="paw" /> */}
 					<div className="image-container title-bg">
 						<img src={scratchPng} alt="Scratch" />
 					</div>

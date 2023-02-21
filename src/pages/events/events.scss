@@ -14,15 +14,24 @@
 		}
 	}
 
+	header {
+		.title-bg {
+			z-index: 0;
+		}
+	}
+
 	.events-section {
 		box-shadow: 0 0 70px 100px black;
-		background: linear-gradient(
-			to bottom,
-			black,
-			var(--clr-bg) 10%,
-			95%,
-			black
-		);
+
+		.wrapper {
+			background: linear-gradient(
+				to bottom,
+				black,
+				var(--clr-bg) 10%,
+				95%,
+				black
+			);
+		}
 
 		.event-card {
 			background: var(--clr-bg);
