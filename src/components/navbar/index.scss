@@ -5,6 +5,7 @@ $transition-details: 0.2s ease-out;
 	backdrop-filter: blur(5px);
 	width: 40vw;
 	margin: auto;
+	z-index: 15;
 
 	.container {
 		background-color: rgba(32, 32, 32, 0.5);

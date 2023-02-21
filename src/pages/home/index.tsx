@@ -13,6 +13,7 @@ function heroLoadingAnim() {
 	// make the logo and title ready for the intro anim
 	gsap.set(".hero-section .logo", { scale: 1.5, opacity: 0 });
 	gsap.set(".hero-section .title", { opacity: 0 });
+	gsap.set(".navbar", { opacity: 0 });
 	document.documentElement.style.overflowY = "hidden";
 	const body = document.getElementsByTagName("body")[0];
 	body.style.overflowY = "hidden";
@@ -55,6 +56,8 @@ function heroLoadingAnim() {
 			);
 		},
 	});
+	// show navbar at the same time
+	introAnimTimeline.to(".navbar", { opacity: 1 });
 }
 
 export default function HomePage() {
