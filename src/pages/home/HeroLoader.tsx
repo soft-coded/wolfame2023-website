@@ -13,14 +13,15 @@ export default function HeroLoader({
 
 		function incrementOnLoad() {
 			haveLoaded++;
-			setLoadedPercent(Math.floor(haveLoaded / allImages.length) * 100);
+			const loadedRatio = haveLoaded / allImages.length;
+			setLoadedPercent(Math.round(loadedRatio * 100));
 			if (haveLoaded === allImages.length) {
 				heroLoadingAnim();
 			}
 		}
 
 		allImages.forEach((image) => {
-			image.addEventListener("load", incrementOnLoad, { once: true });
+			image.addEventListener("load", incrementOnLoad);
 		});
 	}, [heroLoadingAnim]);
 
