@@ -5,7 +5,7 @@ import "./index.scss";
 const links = [
 	{ to: "/", label: "HOME" },
 	{ to: "/events", label: "EVENTS" },
-	{ to: "/leaderboards", label: "LEADERBOARDS" },
+	{ to: "/leaderboards", label: "BOARDS" },
 ];
 
 export default function Navbar() {

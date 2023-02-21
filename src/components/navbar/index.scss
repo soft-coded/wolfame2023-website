@@ -1,3 +1,5 @@
+@use "../../utils/constants";
+
 $transition-details: 0.2s ease-out;
 
 .navbar {
@@ -6,6 +8,10 @@ $transition-details: 0.2s ease-out;
 	width: 40vw;
 	margin: auto;
 	z-index: 15;
+
+	@media (max-width: constants.$mobile-width) {
+		width: 90vw;
+	}
 
 	.container {
 		background-color: rgba(32, 32, 32, 0.5);
@@ -29,6 +35,11 @@ $transition-details: 0.2s ease-out;
 				color: rgb(255, 61, 61);
 				text-shadow: 1.5px 1.5px 0 rgb(255, 61, 61);
 			}
+		}
+
+		@media (max-width: constants.$mobile-width) {
+			font-size: 3.5vw;
+			width: 33vw;
 		}
 
 		&.active {
