@@ -1,0 +1,26 @@
+// dimensions
+$mobile-width: 600px;
+
+// colours
+$clr-primary: hsla(358, 72%, 49%, 1);
+$clr-primary-dark: hsla(358, 72%, 36%, 1);
+$clr-primary-darker: hsla(358, 72%, 22%, 1);
+$clr-primary-light: hsla(358, 72%, 65%, 1);
+$clr-primary-lighter: hsla(358, 72%, 79%, 1);
+$clr-bg: #6b0000;
+$clr-bg-2: #4f0000;
+$clr-bg-3: #330000;
+$clr-text-stroke: rgb(255, 119, 119);
+
+// font-sizes - $font-<tag>-<screen-size>
+$font-h1-lg: 10vw;
+$font-h2-lg: 5vw;
+$font-h3-lg: 2.5vw;
+$font-h4-lg: 2vw;
+$font-h5-lg: 1.8vw;
+$font-p-lg: 1.8vw;
+$font-lg: 1.5vw;
+
+// others
+$container-padding-x: 20px;
+$container-max-width: 1200px;

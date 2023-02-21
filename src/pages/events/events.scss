@@ -1,4 +1,4 @@
-@import "../../constants.scss";
+@use "../../utils/constants";
 
 .events-page {
 	.hero-section {
@@ -9,7 +9,7 @@
 			color: red;
 			-webkit-text-stroke: 3px var(--clr-text-stroke);
 
-			@media (max-width: $mobile-width) {
+			@media (max-width: constants.$mobile-width) {
 				-webkit-text-stroke-width: 2px;
 				font-size: 16vw;
 			}

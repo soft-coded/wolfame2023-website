@@ -1,3 +1,5 @@
+@use "utils/constants";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,18 +35,18 @@ $WOLFAME-scale: 1.3;
 }
 
 :root {
-	--clr-primary: hsla(358, 72%, 49%, 1);
-	--clr-primary-dark: hsla(358, 72%, 36%, 1);
-	--clr-primary-darker: hsla(358, 72%, 22%, 1);
-	--clr-primary-light: hsla(358, 72%, 65%, 1);
-	--clr-primary-lighter: hsla(358, 72%, 79%, 1);
-	--clr-bg: #6b0000;
-	--clr-bg-2: #4f0000;
-	--clr-bg-3: #330000;
-	--clr-text-stroke: rgb(255, 119, 119);
-	--container-padding-x: 20px;
-	--container-max-width: 1200px;
-	--mobile-width: 600px;
+	--clr-primary: #{constants.$clr-primary};
+	--clr-primary-dark: #{constants.$clr-primary-dark};
+	--clr-primary-darker: #{constants.$clr-primary-darker};
+	--clr-primary-light: #{constants.$clr-primary-light};
+	--clr-primary-lighter: #{constants.$clr-primary-lighter};
+	--clr-bg: #{constants.$clr-bg};
+	--clr-bg-2: #{constants.$clr-bg-2};
+	--clr-bg-3: #{constants.$clr-bg-3};
+	--clr-text-stroke: #{constants.$clr-text-stroke};
+	--container-padding-x: #{constants.$container-padding-x};
+	--container-max-width: #{constants.$container-max-width};
+	--mobile-width: #{constants.$mobile-width};
 }
 
 html,
