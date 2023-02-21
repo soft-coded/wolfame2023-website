@@ -150,7 +150,6 @@ $events-section-gap: 4rem;
 			padding: $events-section-gap 0;
 
 			li {
-				// font-size: 2rem;
 				cursor: pointer;
 			}
 		}
@@ -164,6 +163,10 @@ $events-section-gap: 4rem;
 				var(--clr-bg-3) 50%,
 				#000
 			);
+
+			@media (max-width: constants.$mobile-width) {
+				height: 100vh;
+			}
 		}
 
 		.events-swiper {
@@ -174,7 +177,7 @@ $events-section-gap: 4rem;
 			width: 80vw;
 			height: 85vh;
 			background-color: #343434;
-			border-radius: 20px;
+			border-radius: 15px;
 			overflow: hidden;
 
 			.slide-title {
@@ -183,7 +186,6 @@ $events-section-gap: 4rem;
 				left: 50%;
 				z-index: 2;
 				transform: translate(-50%, -50%);
-				// font-size: 2.5rem;
 			}
 		}
 	}
@@ -209,6 +211,7 @@ $events-section-gap: 4rem;
 
 			@media (max-width: constants.$mobile-width) {
 				padding-top: 0;
+				padding-bottom: 50px;
 			}
 		}
 

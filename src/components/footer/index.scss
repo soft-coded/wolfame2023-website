@@ -1,6 +1,15 @@
+@use "../../utils/constants";
+
 .site-footer {
 	background-color: #272727;
 	padding: 50px 0;
+
+	.container {
+		@media (max-width: constants.$mobile-width) {
+			flex-direction: column;
+			gap: 30px;
+		}
+	}
 
 	.image-container {
 		width: 1.4rem;
@@ -13,6 +22,10 @@
 		.image-container {
 			width: 200px;
 			filter: grayscale(50%);
+
+			@media (max-width: constants.$mobile-width) {
+				width: 80vw;
+			}
 		}
 	}
 
@@ -30,7 +43,6 @@
 			flex-direction: column;
 			gap: 10px;
 			font-weight: 400;
-			// font-size: 0.85rem;
 
 			li {
 				cursor: pointer;

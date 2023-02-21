@@ -44,7 +44,6 @@ function heroLoadingAnim() {
 	// reveal the title and play the slideshows
 	introAnimTimeline.to(".hero-section .title", {
 		opacity: 1,
-		x: 0,
 		onComplete: () => {
 			// re-enable scrolling
 			document.documentElement.style.overflowY = "auto";

@@ -85,7 +85,9 @@ export default function EventsSection() {
 							className="event-slide image-container relative"
 						>
 							<img src={eventObj.image} alt={eventObj.event} />
-							<h4 className="slide-title text-center">{eventObj.event}</h4>
+							<h4 className="slide-title text-center">
+								{eventObj.event.toUpperCase()}
+							</h4>
 						</SwiperSlide>
 					))}
 				</Swiper>

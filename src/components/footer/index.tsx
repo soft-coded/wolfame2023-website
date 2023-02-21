@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
 import wolfImg from "../../assets/wolf.png";
@@ -19,13 +18,9 @@ const socials = [
 	},
 ];
 
-function getCurrentYear() {
-	return new Date().getFullYear();
-}
+const currentYear = new Date().getFullYear();
 
 export default function Footer() {
-	const currentYear = useMemo(getCurrentYear, []);
-
 	return (
 		<footer className="site-footer">
 			<div className="container flex justify-between">
