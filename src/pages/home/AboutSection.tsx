@@ -67,16 +67,16 @@ export default function AboutSection() {
 	return (
 		<section ref={aboutSectionRef} className="about-section">
 			<PanelDiv className="about-intro bg-gradient">
-				<h1 className="heading text-center relative">
+				<h3 className="heading text-center relative">
 					{/* <PawSvg className="paw" /> */}
 					<div className="image-container title-bg">
 						<img src={scratchPng} alt="Scratch" />
 					</div>
 					WHAT IS <span className="WOLFAME"></span>?
-				</h1>
+				</h3>
 			</PanelDiv>
 			<PanelDiv className="about-wolfame background-image">
-				<div className="container text-center">
+				<h5 className="container text-center">
 					<span className="WOLFAME"></span> is the cultural sports festival
 					organised by Wolfenden Hall annually.
 					<br /> The three day long event involves a plethora of activities,
@@ -85,18 +85,18 @@ export default function AboutSection() {
 					<br /> After 4 years, the much anticipated festival has returned to
 					reignite the spark of competition among the students and will be
 					witnessed by an approximate of 10,000 people.
-				</div>
+				</h5>
 			</PanelDiv>
 			<PanelDiv className="about-hall-title bg-gradient">
-				<h1 className="heading text-center relative">
+				<h3 className="heading text-center relative">
 					<div className="image-container title-bg">
 						<img src={scratchPng} alt="Scratch" />
 					</div>
 					WOLFENDEN HALL
-				</h1>
+				</h3>
 			</PanelDiv>
 			<PanelDiv className="about-hall background-image">
-				<div className="container text-center">
+				<h5 className="container text-center">
 					Wolfenden Hall is a place of residence for the students of Indian
 					Institute of Engineering Science and Technology, Shibpur. <br />
 					Located right in front of the Oval ground of the institute, it is the
@@ -106,7 +106,7 @@ export default function AboutSection() {
 					them being <span className="WOLFAME"></span>.<br /> Residents of
 					Wolfenden Hall participate in and organise all of the activities in
 					the institute.
-				</div>
+				</h5>
 			</PanelDiv>
 		</section>
 	);

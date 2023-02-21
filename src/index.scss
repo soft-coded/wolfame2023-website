@@ -52,7 +52,6 @@ $WOLFAME-scale: 1.3;
 html,
 body {
 	overflow-x: hidden;
-	scroll-behavior: smooth;
 }
 
 body {
@@ -61,6 +60,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background: #000;
 	color: #fff;
+	font-size: constants.$font-p-lg;
 }
 
 img {
@@ -86,7 +86,27 @@ h6 {
 }
 
 h1 {
-	font-size: 4rem;
+	font-size: constants.$font-h1-lg;
+}
+
+h2 {
+	font-size: constants.$font-h2-lg;
+}
+
+h3 {
+	font-size: constants.$font-h3-lg;
+}
+
+h4 {
+	font-size: constants.$font-h4-lg;
+}
+
+h5 {
+	font-size: constants.$font-h5-lg;
+}
+
+h6 {
+	font-size: constants.$font-h6-lg;
 }
 
 ul,

@@ -33,10 +33,10 @@ export default function Footer() {
 					<div className="image-container">
 						<img src={wolfImg} alt="wolf" />
 					</div>
-					<h5>WOLFAME {currentYear}</h5>
+					<p>WOLFAME {currentYear}</p>
 				</div>
 				<div className="routes footer-section">
-					<h5>EXPLORE</h5>
+					<h6>EXPLORE</h6>
 					<ul className="flex flex-col">
 						<li>
 							<Link to="/">Home</Link>
@@ -45,7 +45,7 @@ export default function Footer() {
 							<Link to="/">About</Link>
 						</li>
 						<li>
-							<Link to="/">Events</Link>
+							<Link to="/events">Events</Link>
 						</li>
 						<li>
 							<Link to="/">Gallery</Link>
@@ -53,7 +53,7 @@ export default function Footer() {
 					</ul>
 				</div>
 				<div className="contact footer-section">
-					<h5>CONTACT</h5>
+					<h6>CONTACT</h6>
 					<ul>
 						{emails.map((email, i) => (
 							<li key={i}>
@@ -78,7 +78,7 @@ export default function Footer() {
 					</ul>
 				</div>
 				<div className="socials footer-section">
-					<h5>SOCIALS</h5>
+					<h6>SOCIALS</h6>
 					<ul>
 						{socials.map((social, i) => (
 							<li key={i}>

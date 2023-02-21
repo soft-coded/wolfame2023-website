@@ -55,12 +55,12 @@ export default function EventsSection() {
 	return (
 		<section ref={eventsSectionRef} className="events-section">
 			<header className="h-screen w-screen flex items-center justify-center bg-gradient">
-				<h1 className="text-center relative">
+				<h3 className="text-center relative">
 					<div className="image-container title-bg">
 						<img src={scratchPng} alt="Scratch" />
 					</div>
 					<span className="relative z-10">EVENTS</span>
-				</h1>
+				</h3>
 			</header>
 			<div className="events-swiper-container flex items-center justify-center">
 				<Swiper
@@ -85,7 +85,7 @@ export default function EventsSection() {
 							className="event-slide image-container relative"
 						>
 							<img src={eventObj.image} alt={eventObj.event} />
-							<h3 className="slide-title">{eventObj.event}</h3>
+							<h4 className="slide-title">{eventObj.event}</h4>
 						</SwiperSlide>
 					))}
 				</Swiper>

@@ -29,7 +29,7 @@ export default function HeroLoader({
 			<div className="hero-loader-text w-full h-full flex items-center justify-center flex-col">
 				{/* eslint-disable-next-line */}
 				<h1 className="WOLFAME"></h1>
-				<h3>{loadedPercent}%</h3>
+				<h4>{loadedPercent}%</h4>
 			</div>
 		</section>
 	);

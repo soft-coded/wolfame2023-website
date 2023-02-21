@@ -95,12 +95,12 @@ export default function GallerySection() {
 	return (
 		<section ref={gallerySectionRef} className="gallery-section relative">
 			<header className="h-screen bg-gradient flex items-center justify-center">
-				<h1 className="text-center relative">
+				<h3 className="text-center relative">
 					<div className="image-container title-bg">
 						<img src={scratchPng} alt="scratch" />
 					</div>
 					<span className="relative z-10">GALLERY</span>
-				</h1>
+				</h3>
 			</header>
 			<div className="gallery-images-wrapper">
 				<div
