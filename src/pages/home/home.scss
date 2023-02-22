@@ -55,13 +55,13 @@ $events-section-gap: 4rem;
 		}
 
 		.slideshow-top {
-			animation: slideshow-top-anim 50s $animation-config;
+			animation: slideshow-top-anim 40s $animation-config;
 		}
 
 		.slideshow-bottom {
 			top: 50%;
 			// animation: slideshow-bottom-anim 180s $animation-config;
-			animation: slideshow-bottom-anim 100s $animation-config;
+			animation: slideshow-bottom-anim 73s $animation-config;
 		}
 
 		@keyframes slideshow-top-anim {
