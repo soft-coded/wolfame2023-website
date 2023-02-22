@@ -52,8 +52,8 @@ export function imageTiltGyro(e: DeviceOrientationEvent, imageClass: string) {
 
 	gsap.to(imageClass, {
 		duration: 0.7,
-		rotationX: -frontToBack * 0.3,
-		rotationY: leftToRight * 0.3,
+		rotationX: -frontToBack * 0.7,
+		rotationY: leftToRight * 0.7,
 		ease: "power3.out",
 	});
 }
