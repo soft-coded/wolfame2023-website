@@ -36,3 +36,24 @@ export function imageTilt(e: MouseEvent, imageClass: string) {
 		ease: "power4.out",
 	});
 }
+
+let prevLR = 0;
+
+export function imageTiltGyro(e: DeviceOrientationEvent, imageClass: string) {
+	let frontToBack = e.beta!;
+	let leftToRight = e.gamma!;
+
+	if (frontToBack > 60 || frontToBack < -60) leftToRight = 0;
+	else if (leftToRight > 60 || leftToRight < -60) frontToBack = 0;
+
+	if (leftToRight < 0 && prevLR > 86) leftToRight = 89;
+	else if (leftToRight > 0 && prevLR < -86) leftToRight = -89;
+	prevLR = leftToRight;
+
+	gsap.to(imageClass, {
+		duration: 0.7,
+		rotationX: -frontToBack * 0.3,
+		rotationY: leftToRight * 0.3,
+		ease: "power3.out",
+	});
+}

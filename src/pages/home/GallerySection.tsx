@@ -17,7 +17,11 @@ import slideshow13 from "../../assets/slideshow13.jpg";
 import slideshow14 from "../../assets/slideshow14.jpg";
 import slideshow15 from "../../assets/slideshow15.jpg";
 import scratchPng from "../../assets/scratch.png";
-import { animateTitleBg, imageTilt } from "../../utils/functions";
+import {
+	animateTitleBg,
+	imageTilt,
+	imageTiltGyro,
+} from "../../utils/functions";
 import constants from "../../utils/constants";
 
 const col1Images = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5];
@@ -76,6 +80,8 @@ export default function GallerySection() {
 			return;
 
 		const galleryImageTilt = (e: MouseEvent) => imageTilt(e, ".gallery-image");
+		const galleryImageTiltGyro = (e: DeviceOrientationEvent) =>
+			imageTiltGyro(e, ".gallery-image");
 		const galleryColumnsContainer = galleryColumnsContainerRef.current;
 
 		const ctx = gsap.context(() => {
@@ -83,6 +89,7 @@ export default function GallerySection() {
 		}, gallerySectionRef);
 
 		galleryColumnsContainer.addEventListener("mousemove", galleryImageTilt);
+		window.addEventListener("deviceorientation", galleryImageTiltGyro);
 
 		return () => {
 			ctx.revert();
@@ -90,6 +97,7 @@ export default function GallerySection() {
 				"mousemove",
 				galleryImageTilt
 			);
+			window.removeEventListener("deviceorientation", galleryImageTiltGyro);
 		};
 	}, []);
 

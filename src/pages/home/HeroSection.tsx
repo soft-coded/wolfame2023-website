@@ -20,7 +20,7 @@ import slideshow15 from "../../assets/slideshow15.jpg";
 import slideshow16 from "../../assets/slideshow16.jpg";
 import slideshow17 from "../../assets/slideshow17.jpg";
 import slideshow18 from "../../assets/slideshow18.jpg";
-import { imageTilt } from "../../utils/functions";
+import { imageTilt, imageTiltGyro } from "../../utils/functions";
 
 const topSlideshow = [
 	// slideshow1,
@@ -53,14 +53,18 @@ export default function HeroSection() {
 		if (!heroSectionRef.current) return;
 		const heroSection = heroSectionRef.current;
 		const heroImageTilt = (e: MouseEvent) => imageTilt(e, ".logo");
+		const heroImageTiltGyro = (e: DeviceOrientationEvent) =>
+			imageTiltGyro(e, ".logo");
 
 		const ctx = gsap.context(() => {
 			heroSection.addEventListener("mousemove", heroImageTilt);
+			window.addEventListener("deviceorientation", heroImageTiltGyro);
 		}, heroSectionRef);
 
 		return () => {
 			ctx.revert();
 			heroSection.removeEventListener("mousemove", heroImageTilt);
+			window.removeEventListener("deviceorientation", heroImageTiltGyro);
 		};
 	}, []);
 
