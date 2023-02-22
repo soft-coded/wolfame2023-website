@@ -2,20 +2,20 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 
 import wolfPng from "../../assets/wolf.png";
-import slideshow1 from "../../assets/slideshow1.jpg";
-import slideshow2 from "../../assets/slideshow2.jpg";
-import slideshow3 from "../../assets/slideshow3.jpg";
-import slideshow4 from "../../assets/slideshow4.jpg";
-import slideshow5 from "../../assets/slideshow5.jpg";
+// import slideshow1 from "../../assets/slideshow1.jpg";
+// import slideshow2 from "../../assets/slideshow2.jpg";
+// import slideshow3 from "../../assets/slideshow3.jpg";
+// import slideshow4 from "../../assets/slideshow4.jpg";
+// import slideshow5 from "../../assets/slideshow5.jpg";
 import slideshow6 from "../../assets/slideshow6.jpg";
 import slideshow7 from "../../assets/slideshow7.jpg";
 import slideshow8 from "../../assets/slideshow8.jpg";
 import slideshow9 from "../../assets/slideshow9.jpg";
-import slideshow10 from "../../assets/slideshow10.jpg";
-import slideshow11 from "../../assets/slideshow11.jpg";
-import slideshow12 from "../../assets/slideshow12.jpg";
-import slideshow13 from "../../assets/slideshow13.jpg";
-import slideshow14 from "../../assets/slideshow14.jpg";
+// import slideshow10 from "../../assets/slideshow10.jpg";
+// import slideshow11 from "../../assets/slideshow11.jpg";
+// import slideshow12 from "../../assets/slideshow12.jpg";
+// import slideshow13 from "../../assets/slideshow13.jpg";
+// import slideshow14 from "../../assets/slideshow14.jpg";
 import slideshow15 from "../../assets/slideshow15.jpg";
 import slideshow16 from "../../assets/slideshow16.jpg";
 import slideshow17 from "../../assets/slideshow17.jpg";
@@ -23,11 +23,11 @@ import slideshow18 from "../../assets/slideshow18.jpg";
 import { imageTilt } from "../../utils/functions";
 
 const topSlideshow = [
-	slideshow1,
-	slideshow2,
-	slideshow3,
-	slideshow4,
-	slideshow5,
+	// slideshow1,
+	// slideshow2,
+	// slideshow3,
+	// slideshow4,
+	// slideshow5,
 	slideshow6,
 	slideshow7,
 	slideshow8,
@@ -35,11 +35,11 @@ const topSlideshow = [
 ];
 
 const bottomSlideshow = [
-	slideshow10,
-	slideshow11,
-	slideshow12,
-	slideshow13,
-	slideshow14,
+	// slideshow10,
+	// slideshow11,
+	// slideshow12,
+	// slideshow13,
+	// slideshow14,
 	slideshow15,
 	slideshow16,
 	slideshow17,

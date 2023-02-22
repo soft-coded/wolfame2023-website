@@ -1,7 +1,8 @@
 @use "../../utils/constants";
 
 $animation-config: linear infinite;
-$slideshow-image-count: 9;
+// $slideshow-image-count: 9;
+$slideshow-image-count: 4;
 $slideshow-image-width: 500px;
 $section-padding-y: 100px;
 $events-section-gap: 4rem;
@@ -45,7 +46,6 @@ $events-section-gap: 4rem;
 			z-index: -5;
 			display: flex;
 			width: calc($slideshow-image-width * $slideshow-image-count * 2);
-			transform: translate3d(0, 0, 0);
 			will-change: transform;
 
 			.image-container {
@@ -55,36 +55,41 @@ $events-section-gap: 4rem;
 		}
 
 		.slideshow-top {
-			animation: slideshow-top-anim 60s $animation-config;
+			animation: slideshow-top-anim 50s $animation-config;
 		}
 
 		.slideshow-bottom {
 			top: 50%;
-			animation: slideshow-bottom-anim 180s $animation-config;
+			// animation: slideshow-bottom-anim 180s $animation-config;
+			animation: slideshow-bottom-anim 100s $animation-config;
 		}
 
 		@keyframes slideshow-top-anim {
 			0% {
-				transform: translateX(0);
+				transform: translate3d(0, 0, 0);
 			}
 			100% {
-				transform: translateX(
-					calc($slideshow-image-count * $slideshow-image-width * -1)
+				transform: translate3d(
+					calc($slideshow-image-count * $slideshow-image-width * -1),
+					0,
+					0
 				);
 			}
 		}
 
 		@keyframes slideshow-bottom-anim {
 			0% {
-				transform: translateX(
+				transform: translate3d(
 					calc(
 						($slideshow-image-count * $slideshow-image-width * -2) +
 							($slideshow-image-width * 3)
-					)
+					),
+					0,
+					0
 				);
 			}
 			100% {
-				transform: translateX(0);
+				transform: translate3d(0, 0, 0);
 			}
 		}
 	}
