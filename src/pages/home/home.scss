@@ -157,6 +157,16 @@ $events-section-gap: 4rem;
 			user-select: none;
 		}
 
+		.swiper-pagination-bullet {
+			background: rgb(197, 197, 197);
+			opacity: 0.6;
+		}
+
+		.swiper-pagination-bullet-active {
+			background: red;
+			opacity: 1;
+		}
+
 		.event-slide {
 			width: 80vw;
 			height: 85vh;

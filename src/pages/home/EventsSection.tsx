@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper";
+import { EffectCoverflow, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -76,7 +76,11 @@ export default function EventsSection() {
 					// 	slideShadows: true,
 					// }}
 					// spaceBetween={50}
-					modules={[EffectCoverflow]}
+					pagination={{
+						dynamicBullets: true,
+						clickable: false,
+					}}
+					modules={[EffectCoverflow, Pagination]}
 					className="events-swiper"
 				>
 					{eventsList.map((eventObj, i) => (
