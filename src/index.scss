@@ -85,6 +85,15 @@ button {
 	background: none;
 }
 
+button.primary-button {
+	background-color: rgb(195, 2, 2);
+	padding: 1vw 1vw;
+
+	@media (max-width: constants.$mobile-width) {
+		padding: 2vw 3vw;
+	}
+}
+
 h1,
 h2,
 h3,
