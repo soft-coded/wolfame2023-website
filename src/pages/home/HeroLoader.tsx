@@ -43,23 +43,21 @@ function GyroInfo({ heroLoadingAnim }: { heroLoadingAnim: () => void }) {
 			.finally(triggerAnim);
 	}
 
-	console.log("rendered");
+	useEffect(() => {
+		triggerAnim();
+	}, [triggerAnim]);
 
 	useEffect(() => {
-		if (isSafari) return;
-
-		triggerAnim();
+		if (!isSafari) return;
 
 		return () => {
-			if (!isSafari) return;
-
 			window.removeEventListener("deviceorientation", heroTiltGyro);
 			window.removeEventListener("deviceorientation", galleryTiltGyro);
 		};
-	}, [triggerAnim]);
+	}, []);
 
 	return (
-		<div ref={gyroInfoRef}>
+		<div ref={gyroInfoRef} className="pt-3 pb-3">
 			{isSafari ? (
 				<button onClick={handleSafariGyro} className="primary-button">
 					ENABLE GYROSCOPE
