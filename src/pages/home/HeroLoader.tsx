@@ -3,6 +3,7 @@ import constants from "../../utils/constants";
 import { imageTiltGyro } from "../../utils/functions";
 
 const isSafari =
+	DeviceOrientationEvent &&
 	typeof (DeviceOrientationEvent as any).requestPermission === "function";
 
 const heroTiltGyro = (e: DeviceOrientationEvent) => imageTiltGyro(e, ".logo");
@@ -21,7 +22,7 @@ function GyroInfo({ heroLoadingAnim }: { heroLoadingAnim: () => void }) {
 	}, [heroLoadingAnim]);
 
 	function handleSafariGyro() {
-		if (!gyroInfoRef.current) return;
+		if (!gyroInfoRef.current || !DeviceOrientationEvent) return;
 		const gyroInfoDiv = gyroInfoRef.current;
 
 		(DeviceOrientationEvent as any)
