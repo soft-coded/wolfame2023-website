@@ -144,9 +144,11 @@ export default function EventsSection() {
 								display: "flex",
 							}}
 						>
-							<div className="card-text flex items-center flex-col gap-2">
-								<h4>{eventObj.event}</h4>
-								<h6 className="font-semibold">{eventObj.description}</h6>
+							<div className="card-text flex items-center flex-col gap-2 pl-4 pr-4">
+								<h4 className="text-center">{eventObj.event}</h4>
+								<h6 className="font-semibold text-center">
+									{eventObj.description}
+								</h6>
 							</div>
 						</SwiperSlide>
 					))}
