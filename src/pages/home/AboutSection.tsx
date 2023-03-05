@@ -78,9 +78,9 @@ export default function AboutSection() {
 				<h5 className="container info-text text-center">
 					<span className="WOLFAME"></span> is the cultural sports festival
 					organised by Wolfenden Hall annually.
-					<br /> The three day long event involves a plethora of activities,
-					both indoor and outdoor, attended by enthusiastic students willing to
-					prove their mettle.
+					<br /> The four day long event involves a plethora of activities, both
+					indoor and outdoor, attended by enthusiastic students willing to prove
+					their mettle.
 					<br /> It is a chance for every hostel/hall to lay their claim on the
 					ultimate glory - THE CHAMPION OF CHAMPIONS TROPHY. This coveted trophy
 					is a symbol of sportsman spirit, excellence, and bravery, qualities

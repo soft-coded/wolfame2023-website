@@ -93,8 +93,8 @@ export default function Footer() {
 				</div>
 			</div>
 			<div className="copyright container text-center">
-				Copyright &copy; {currentYear}. All rights reserved by Wolfame Comittee
-				and IIEST, Shibpur.
+				Copyright &copy; {currentYear}. All rights reserved by Wolfame
+				organisers and IIEST, Shibpur.
 			</div>
 		</footer>
 	);

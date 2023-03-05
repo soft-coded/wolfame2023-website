@@ -51,7 +51,7 @@ const eventsList = [
 	{
 		event: "CHESS",
 		image: chessPhoto,
-		description: "GOD SAVE THE QUEEN",
+		description: "FACE THE WOLF'S GAMBIT",
 	},
 	{
 		event: "CARROM",
@@ -86,7 +86,7 @@ const eventsList = [
 	{
 		event: "FIFA",
 		image: fifaPhoto,
-		description: "TRAIN HANDS FOR FOOTBALL",
+		description: "TRAIN FINGERS FOR FOOTBALL",
 	},
 ];
 
