@@ -20,47 +20,56 @@
 		}
 	}
 
-	.events-section {
+	.dev-section {
 		box-shadow: 0 0 70px 100px black;
 
-		.wrapper {
-			background: linear-gradient(
-				to bottom,
-				black,
+		.content-wrapper {
+			background: radial-gradient(
+				50% 40% at 50% 50%,
 				var(--clr-bg) 10%,
 				95%,
 				black
 			);
-		}
-
-		.event-card {
-			background: var(--clr-bg);
-			padding: 30px 50px;
-			min-height: 600px;
-			position: relative;
-			border-radius: 10px;
-			overflow: hidden;
+			padding: 100px 0;
 
 			@media (max-width: constants.$mobile-width) {
-				padding: 30px 40px;
+				background: radial-gradient(
+					50% 51% at 50% 50%,
+					var(--clr-bg) 10%,
+					95%,
+					black
+				);
+				padding: 50px 0;
+			}
+		}
+
+		.container {
+			@media (max-width: constants.$mobile-width) {
+				gap: 50px;
+			}
+		}
+
+		.profile-photo {
+			border-radius: 50%;
+			overflow: hidden;
+			width: 40vw;
+
+			@media (max-width: constants.$mobile-width) {
+				width: 50vw;
+			}
+		}
+
+		.socials {
+			.image-container {
+				width: 10vw;
+
+				@media (max-width: constants.$mobile-width) {
+					width: 20vw;
+				}
 			}
 
-			&::before {
-				content: "";
-				position: absolute;
-				inset: 0;
-				z-index: 1;
-				background: rgba(0, 0, 0, 0.402);
-			}
-
-			.content {
-				position: relative;
-				z-index: 2;
-			}
-
-			ul {
-				list-style-type: disc;
-				font-weight: 500;
+			.github {
+				filter: invert(100%);
 			}
 		}
 	}
