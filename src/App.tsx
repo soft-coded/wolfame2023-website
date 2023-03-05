@@ -6,6 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import HomePage from "./pages/home";
 import EventsPage from "./pages/events";
 import Leaderboards from "./pages/leaderboards";
+import AboutPage from "./pages/about";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,6 +24,7 @@ export default function App() {
 			<Route path="/" element={<HomePage />} />
 			<Route path="/events" element={<EventsPage />} />
 			<Route path="/leaderboards" element={<Leaderboards />} />
+			<Route path="/about" element={<AboutPage />} />
 		</Routes>
 	);
 }
