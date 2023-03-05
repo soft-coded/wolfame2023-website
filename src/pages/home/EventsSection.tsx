@@ -23,22 +23,71 @@ import scratchPng from "../../assets/scratch.png";
 import { animateTitleBg } from "../../utils/functions";
 
 const eventsList = [
-	{ event: "Futsal", image: futsalPhoto },
-	{ event: "Tug of war", image: tugOfWarPhoto },
 	{
-		event: "Volleyball",
-		image: volleyballPhoto,
+		event: "FUTSAL",
+		image: futsalPhoto,
+		description: "DRIBBLE PAST YOUR OPPONENTS",
 	},
-	{ event: "Badminton", image: badmintonPhoto },
-	{ event: "Basketball", image: basketballPhoto },
-	{ event: "Chess", image: chessPhoto },
-	{ event: "Carrom", image: carromPhoto },
-	{ event: "Table tennis", image: ttPhoto },
-	{ event: "BGMI", image: bgmiPhoto },
-	{ event: "Cricket", image: cricketPhoto },
-	{ event: "Powerlifting", image: powerliftingPhoto },
-	{ event: "Valorant", image: valorantPhoto },
-	{ event: "Fifa", image: fifaPhoto },
+	{
+		event: "TUG OF WAR",
+		image: tugOfWarPhoto,
+		description: "TUSSLE FOR THE TROPHY",
+	},
+	{
+		event: "VOLLEYBALL",
+		image: volleyballPhoto,
+		description: "SMASH 'EM UP",
+	},
+	{
+		event: "BADMINTON",
+		image: badmintonPhoto,
+		description: "DON'T BE SO COCKY",
+	},
+	{
+		event: "BASKETBALL",
+		image: basketballPhoto,
+		description: "DUNK AND DRIVE",
+	},
+	{
+		event: "CHESS",
+		image: chessPhoto,
+		description: "GOD SAVE THE QUEEN",
+	},
+	{
+		event: "CARROM",
+		image: carromPhoto,
+		description: "RANI AKELE NAHI MILEGI",
+	},
+	{
+		event: "TABLE TENNIS",
+		image: ttPhoto,
+		description: "SERVE WITH A SPIN",
+	},
+	{
+		event: "SHORT PITCH CRICKET",
+		image: cricketPhoto,
+		description: "SAVE YOUR BAILS",
+	},
+	{
+		event: "POWERLIFTING",
+		image: powerliftingPhoto,
+		description: "LET THE BAR RING YOUR BELLS",
+	},
+	{
+		event: "BGMI",
+		image: bgmiPhoto,
+		description: "BEST GAMER MAKES IT",
+	},
+	{
+		event: "VALORANT",
+		image: valorantPhoto,
+		description: "COORDINATE TO DOMINATE",
+	},
+	{
+		event: "FIFA",
+		image: fifaPhoto,
+		description: "TRAIN HANDS FOR FOOTBALL",
+	},
 ];
 
 export default function EventsSection() {
@@ -86,12 +135,19 @@ export default function EventsSection() {
 					{eventsList.map((eventObj, i) => (
 						<SwiperSlide
 							key={i}
-							className="event-slide image-container relative"
+							className="event-slide items-center justify-center relative"
+							style={{
+								backgroundImage: `url(${eventObj.image})`,
+								backgroundPosition: "center center",
+								backgroundRepeat: "no-repeat",
+								backgroundSize: "cover",
+								display: "flex",
+							}}
 						>
-							<img src={eventObj.image} alt={eventObj.event} />
-							<h4 className="slide-title text-center">
-								{eventObj.event.toUpperCase()}
-							</h4>
+							<div className="card-text flex items-center flex-col gap-2">
+								<h4>{eventObj.event}</h4>
+								<h6 className="font-semibold">{eventObj.description}</h6>
+							</div>
 						</SwiperSlide>
 					))}
 				</Swiper>

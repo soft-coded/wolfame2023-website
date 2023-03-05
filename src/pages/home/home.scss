@@ -173,12 +173,16 @@ $events-section-gap: 4rem;
 			border-radius: 15px;
 			overflow: hidden;
 
-			.slide-title {
+			&::before {
+				content: "";
 				position: absolute;
-				top: 50%;
-				left: 50%;
+				inset: 0;
+				z-index: 1;
+				background-color: rgba(0, 0, 0, 0.477);
+			}
+
+			.card-text {
 				z-index: 2;
-				transform: translate(-50%, -50%);
 			}
 		}
 	}
