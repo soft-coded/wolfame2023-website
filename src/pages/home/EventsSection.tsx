@@ -41,7 +41,7 @@ const eventsList = [
 	{
 		event: "BADMINTON",
 		image: badmintonPhoto,
-		description: "DON'T BE SO COCKY",
+		description: "DON'T GET TOO COCKY",
 	},
 	{
 		event: "BASKETBALL",
