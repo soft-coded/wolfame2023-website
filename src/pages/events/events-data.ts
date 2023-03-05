@@ -28,7 +28,7 @@ const eventsData: EventsDataType = {
 		name: "FUTSAL",
 		rules: [
 			"At most 2 teams can participate from each hall/hostel.",
-			"Each team will be made of 6+2 players.",
+			"Each team will be made of 5+2 players.",
 			"Rolling substitution is allowed.",
 			"Game length:<br />Group stage - Each half 10 minutes<br />Semi-finals - Each half 15 minutes<br />Final - Each half 20 minutes",
 			"No one is allowed to play for more than one team.",
@@ -59,7 +59,7 @@ const eventsData: EventsDataType = {
 			"Each team must have 5 members.",
 			"Playing order: singles, doubles, singles, doubles, singles.",
 			"Team that wins at least 3 matches out of 5 will be declared winner.",
-			"Each player can play at most 2 matches.",
+			"Each player can play at most 2 matches but cannot play 2 single matches.",
 			"Scoring system will be decided by the referee based on the stage of matches.",
 			"BWF rules will be followed during all matches.",
 		],
@@ -72,7 +72,7 @@ const eventsData: EventsDataType = {
 			"Each team must have 5 members.",
 			"Playing order: singles, doubles, singles, doubles, singles.",
 			"Team that wins at least 3 matches out of 5 will be declared winner.",
-			"Each player can play at most 2 matches.",
+			"Each player can play at most 2 matches but cannot play 2 single matches.",
 			"Scoring system will be decided by the referee based on the stage of matches.",
 			"Latest ITTF rules will be followed during the match.",
 		],
@@ -97,7 +97,7 @@ const eventsData: EventsDataType = {
 	volleyball: {
 		name: "VOLLEYBALL",
 		rules: [
-			"Each team can comprise of a maximum of 2 players. There will be knockout matches of 25 points each (single set) except semifinals (3 sets of 15 points each) and final (3 sets of 25 points each).",
+			"Each team can comprise of 6+1 players. There will be knockout matches of 25 points each (single set) except semifinals (3 sets of 15 points each) and final (3 sets of 25 points each).",
 			"It is legal to contact the ball with any part of a player's body.",
 			"A player cannot block or attack a serve from on or inside the 10-foot line.",
 			"Ball hitting the boundary line is in. Ball is out if it hits the antenna, the floor completely outside the court, any of the net or cables outside the antennae, the referee stand or pole.",
