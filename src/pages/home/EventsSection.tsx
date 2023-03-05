@@ -46,7 +46,7 @@ const eventsList = [
 	{
 		event: "BASKETBALL",
 		image: basketballPhoto,
-		description: "DUNK AND DRIVE",
+		description: "DUNK AND DIVE",
 	},
 	{
 		event: "CHESS",
