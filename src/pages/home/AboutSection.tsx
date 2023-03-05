@@ -67,23 +67,26 @@ export default function AboutSection() {
 	return (
 		<section ref={aboutSectionRef} className="about-section">
 			<PanelDiv className="about-intro bg-gradient">
-				<h3 className="heading text-center relative">
+				<h3 className="heading container text-center relative">
 					<div className="image-container title-bg">
 						<img src={scratchPng} alt="Scratch" />
 					</div>
-					WHAT IS <span className="WOLFAME"></span>?
+					WHAT <span className="WOLFAME"></span> IS
 				</h3>
 			</PanelDiv>
 			<PanelDiv className="about-wolfame background-image">
-				<h5 className="container text-center">
+				<h5 className="container info-text text-center">
 					<span className="WOLFAME"></span> is the cultural sports festival
 					organised by Wolfenden Hall annually.
 					<br /> The three day long event involves a plethora of activities,
 					both indoor and outdoor, attended by enthusiastic students willing to
 					prove their mettle.
-					<br /> After 4 years, the much anticipated festival has returned to
-					reignite the spark of competition among the students and will be
-					witnessed by an approximate of 10,000 people.
+					<br /> It is a chance for every hostel/hall to lay their claim on the
+					ultimate glory - THE CHAMPION OF CHAMPIONS TROPHY. This coveted trophy
+					is a symbol of sportsman spirit, excellence, and bravery, qualities
+					that WOLFENDEN HALL stands for.
+					<br /> This tournament is a grand celebration, full of challenges and
+					fun, and is attended by thousands of people every year.
 				</h5>
 			</PanelDiv>
 			<PanelDiv className="about-hall-title bg-gradient">
@@ -95,16 +98,19 @@ export default function AboutSection() {
 				</h3>
 			</PanelDiv>
 			<PanelDiv className="about-hall background-image">
-				<h5 className="container text-center">
+				<h5 className="container info-text text-center">
 					Wolfenden Hall is a place of residence for the students of Indian
-					Institute of Engineering Science and Technology, Shibpur. <br />
-					Located right in front of the Oval ground of the institute, it is the
-					home to many prestigious events organised throughout the year, one
-					of&nbsp;
-					{/* them being <span className="wolfame">WOLFAME</span>.<br /> Residents */}
-					them being <span className="WOLFAME"></span>.<br /> Residents of
-					Wolfenden Hall participate in and organise all of the activities in
-					the institute.
+					Institute of Engineering Science and Technology, Shibpur.
+					<br /> Located right in front of the Oval ground of the institute, it
+					is the home to many prestigious events organised throughout the year,
+					one of&nbsp; them being <span className="WOLFAME"></span>.
+					<br /> Residents of Wolfenden Hall participate in and organise all of
+					the activities in the institute.
+					<br /> The hall is home to free-thinkers who want to prove their
+					mettle in every field, be it sports, academics, music and everything
+					else.
+					<br /> Wolfenden Hall has a very profound alumni base spread across
+					the world.
 				</h5>
 			</PanelDiv>
 		</section>
