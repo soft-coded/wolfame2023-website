@@ -50,11 +50,11 @@ export default function DevelopersSection() {
 	return (
 		<section ref={devSectionRef} className="dev-section pt-12 pb-12">
 			<header className="h-screen w-screen flex items-center justify-center bg-gradient">
-				<h3 className="text-center relative">
+				<h3 className="text-center relative px-5">
 					<div className="image-container title-bg">
 						<img src={scratchPng} alt="Scratch" />
 					</div>
-					<span className="relative z-10">SITE DEVELOPER</span>
+					<span className="relative z-10">WEBSITE DEVELOPER</span>
 				</h3>
 			</header>
 			<div className="content-wrapper">
