@@ -1,21 +1,21 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 
-import slideshow1 from "../../assets/slideshow1.jpg";
-import slideshow2 from "../../assets/slideshow2.jpg";
-import slideshow3 from "../../assets/slideshow3.jpg";
-import slideshow4 from "../../assets/slideshow4.jpg";
-import slideshow5 from "../../assets/slideshow5.jpg";
-import slideshow6 from "../../assets/slideshow6.jpg";
-import slideshow7 from "../../assets/slideshow7.jpg";
-import slideshow8 from "../../assets/slideshow8.jpg";
-import slideshow9 from "../../assets/slideshow9.jpg";
-import slideshow10 from "../../assets/slideshow10.jpg";
-import slideshow11 from "../../assets/slideshow11.jpg";
-import slideshow12 from "../../assets/slideshow12.jpg";
-import slideshow13 from "../../assets/slideshow13.jpg";
-import slideshow14 from "../../assets/slideshow14.jpg";
-import slideshow15 from "../../assets/slideshow15.jpg";
+import gallery1 from "../../assets/home-page/gallery-section/gallery1.jpg";
+import gallery2 from "../../assets/home-page/gallery-section/gallery2.jpg";
+import gallery3 from "../../assets/home-page/gallery-section/gallery3.jpg";
+import gallery4 from "../../assets/home-page/gallery-section/gallery4.jpg";
+import gallery5 from "../../assets/home-page/gallery-section/gallery5.jpg";
+import gallery6 from "../../assets/home-page/gallery-section/gallery6.jpg";
+import gallery7 from "../../assets/home-page/gallery-section/gallery7.jpg";
+import gallery8 from "../../assets/home-page/gallery-section/gallery8.jpg";
+import gallery9 from "../../assets/home-page/gallery-section/gallery9.jpg";
+import gallery10 from "../../assets/home-page/gallery-section/gallery10.jpg";
+import gallery11 from "../../assets/home-page/gallery-section/gallery11.jpg";
+import gallery12 from "../../assets/home-page/gallery-section/gallery12.jpg";
+import gallery13 from "../../assets/home-page/gallery-section/gallery13.jpg";
+import gallery14 from "../../assets/home-page/gallery-section/gallery14.jpg";
+import gallery15 from "../../assets/home-page/gallery-section/gallery15.jpg";
 import scratchPng from "../../assets/scratch.png";
 import {
 	animateTitleBg,
@@ -24,23 +24,11 @@ import {
 } from "../../utils/functions";
 import constants from "../../utils/constants";
 
-const col1Images = [slideshow1, slideshow2, slideshow3, slideshow4, slideshow5];
+const col1Images = [gallery1, gallery2, gallery3, gallery4, gallery5];
 
-const col2Images = [
-	slideshow6,
-	slideshow7,
-	slideshow8,
-	slideshow9,
-	slideshow10,
-];
+const col2Images = [gallery6, gallery7, gallery8, gallery9, gallery10];
 
-const col3Images = [
-	slideshow11,
-	slideshow12,
-	slideshow13,
-	slideshow14,
-	slideshow15,
-];
+const col3Images = [gallery11, gallery12, gallery13, gallery14, gallery15];
 
 type ColumnProps = {
 	containerClassName?: string;

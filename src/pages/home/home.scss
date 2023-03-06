@@ -1,7 +1,6 @@
 @use "../../utils/constants";
 
 $animation-config: linear infinite;
-// $slideshow-image-count: 9;
 $slideshow-image-count: 4;
 $slideshow-image-width: 500px;
 $section-padding-y: 100px;
@@ -113,11 +112,11 @@ $events-section-gap: 4rem;
 		}
 
 		.about-wolfame {
-			background-image: url(../../assets/wolfame.jpg);
+			background-image: url(../../assets/home-page/wolfame.jpg);
 		}
 
 		.about-hall {
-			background-image: url(../../assets/hall.jpg);
+			background-image: url(../../assets/home-page/hall.jpg);
 		}
 	}
 
