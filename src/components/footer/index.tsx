@@ -4,7 +4,28 @@ import wolfImg from "../../assets/wolf.png";
 import instagramSvg from "../../assets/svgs/instagram.svg";
 import gmailSvg from "../../assets/svgs/gmail.svg";
 import phoneSvg from "../../assets/svgs/phone.svg";
+import linkedinSvg from "../../assets/svgs/linkedin.svg";
 import "./index.scss";
+
+const links = [
+	{
+		label: "Home",
+		to: "/",
+	},
+	{
+		label: "About",
+		to: "/about",
+	},
+
+	{
+		label: "Events",
+		to: "/events",
+	},
+	{
+		label: "Boards",
+		to: "/leaderboards",
+	},
+];
 
 const emails = [
 	"contactwolfame@gmail.com",
@@ -19,6 +40,11 @@ const socials = [
 		label: "Instagram",
 		link: "https://www.instagram.com/wolfame_official/",
 		icon: instagramSvg,
+	},
+	{
+		label: "LinkedIn",
+		link: "https://www.linkedin.com/in/wolfame-the-sports-and-cultural-fest-25696a265",
+		icon: linkedinSvg,
 	},
 ];
 
@@ -37,18 +63,11 @@ export default function Footer() {
 				<div className="routes footer-section">
 					<h6>EXPLORE</h6>
 					<ul className="flex flex-col">
-						<li>
-							<Link to="/">Home</Link>
-						</li>
-						<li>
-							<Link to="/about">About</Link>
-						</li>
-						<li>
-							<Link to="/events">Events</Link>
-						</li>
-						<li>
-							<Link to="/leaderboards">Boards</Link>
-						</li>
+						{links.map((link, i) => (
+							<li key={i}>
+								<Link to={link.to}>{link.label}</Link>
+							</li>
+						))}
 					</ul>
 				</div>
 				<div className="contact footer-section">

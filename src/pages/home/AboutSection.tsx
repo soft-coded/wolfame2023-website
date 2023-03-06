@@ -1,7 +1,6 @@
 import { useLayoutEffect, ReactNode, useRef } from "react";
 import gsap from "gsap";
 
-// import PawSvg from "../../svg/paw";
 import scratchPng from "../../assets/scratch.png";
 import { animateTitleBg } from "../../utils/functions";
 
