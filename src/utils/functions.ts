@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 export function animateTitleBg(
 	titleBgClass: string,
@@ -55,5 +56,63 @@ export function imageTiltGyro(e: DeviceOrientationEvent, imageClass: string) {
 		rotationX: -frontToBack * 0.7,
 		rotationY: leftToRight * 0.7,
 		ease: "power3.out",
+	});
+}
+
+export function scrollSnapAnim(
+	selectorQuery: string,
+	enterAnim: gsap.core.Tween | undefined = undefined
+) {
+	const sections = gsap.utils.toArray<HTMLDivElement>(selectorQuery);
+
+	const scrolling = {
+		enabled: true,
+		events: ["scroll", "wheel", "touchmove", "pointermove"],
+		prevent: (e: Event) => e.preventDefault(),
+		disable() {
+			if (scrolling.enabled) {
+				scrolling.enabled = false;
+				window.addEventListener("scroll", gsap.ticker.tick, { passive: true });
+				scrolling.events.forEach((e, i) =>
+					(i ? document : window).addEventListener(e, scrolling.prevent, {
+						passive: false,
+					})
+				);
+			}
+		},
+		enable() {
+			if (!scrolling.enabled) {
+				scrolling.enabled = true;
+				window.removeEventListener("scroll", gsap.ticker.tick);
+				scrolling.events.forEach((e, i) =>
+					(i ? document : window).removeEventListener(e, scrolling.prevent)
+				);
+			}
+		},
+	};
+
+	function goToSection(section: HTMLElement) {
+		if (scrolling.enabled) {
+			// skip if a scroll tween is in progress
+			scrolling.disable();
+			gsap.to(window, {
+				scrollTo: { y: section, autoKill: false },
+				onComplete: scrolling.enable,
+				duration: 1,
+				ease: "power3",
+			});
+
+			enterAnim?.restart();
+		}
+	}
+
+	sections.forEach((section) => {
+		ScrollTrigger.create({
+			trigger: section,
+			start: "top bottom-=1",
+			end: "bottom top+=1",
+			onEnter: () => goToSection(section),
+			onEnterBack: () => goToSection(section),
+		});
 	});
 }

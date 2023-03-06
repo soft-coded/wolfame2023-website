@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import ScrollTo from "gsap/ScrollToPlugin";
 
 import HomePage from "./pages/home";
 import EventsPage from "./pages/events";
@@ -9,6 +10,7 @@ import Leaderboards from "./pages/leaderboards";
 import AboutPage from "./pages/about";
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTo);
 
 export default function App() {
 	const { pathname } = useLocation();

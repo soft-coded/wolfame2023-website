@@ -1,5 +1,11 @@
 @use "../../utils/constants";
 
+$timepoint-bg-gradient: radial-gradient(
+	80% 60% at 50% 50%,
+	rgba(0, 0, 0, 0.304),
+	black
+);
+
 .events-page {
 	.hero-section {
 		background-image: url(../../assets/events-page/hero-bg.jpg);
@@ -17,6 +23,49 @@
 	header {
 		.title-bg {
 			z-index: 0;
+		}
+	}
+
+	.timeline-section {
+		box-shadow: 0 0 70px 100px black;
+
+		.timepoints-container {
+			// background: linear-gradient(
+			// 	to bottom,
+			// 	black,
+			// 	var(--clr-bg) 10%,
+			// 	95%,
+			// 	black
+			// );
+		}
+
+		.timepoint {
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 32px;
+			background-blend-mode: color;
+		}
+
+		.timepoint-1 {
+			background-image: url(../../assets/events-page/inauguration-bg.jpg),
+				$timepoint-bg-gradient;
+		}
+
+		.timepoint-2 {
+			background-image: url(../../assets/home-page/gallery-section/gallery3.jpg),
+				$timepoint-bg-gradient;
+		}
+
+		.timepoint-3 {
+			background-image: url(../../assets/home-page/gallery-section/gallery5.jpg),
+				$timepoint-bg-gradient;
+		}
+
+		.timepoint-4 {
+			background-image: url(../../assets/home-page/gallery-section/gallery7.jpg),
+				$timepoint-bg-gradient;
 		}
 	}
 
