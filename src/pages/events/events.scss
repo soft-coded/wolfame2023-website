@@ -1,7 +1,7 @@
 @use "../../utils/constants";
 
 $timepoint-bg-gradient: radial-gradient(
-	80% 60% at 50% 50%,
+	80% 50% at 50% 50%,
 	rgba(0, 0, 0, 0.304),
 	black
 );
@@ -29,49 +29,38 @@ $timepoint-bg-gradient: radial-gradient(
 	.timeline-section {
 		box-shadow: 0 0 70px 100px black;
 
-		.timepoints-container {
-			// background: linear-gradient(
-			// 	to bottom,
-			// 	black,
-			// 	var(--clr-bg) 10%,
-			// 	95%,
-			// 	black
-			// );
-		}
-
 		.timepoint {
 			height: 100vh;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 32px;
 			background-blend-mode: color;
 		}
 
-		.timepoint-1 {
+		.timepoint-0 {
 			background-image: url(../../assets/events-page/inauguration-bg.jpg),
 				$timepoint-bg-gradient;
 		}
 
-		.timepoint-2 {
+		.timepoint-1 {
 			background-image: url(../../assets/home-page/gallery-section/gallery3.jpg),
 				$timepoint-bg-gradient;
 		}
 
-		.timepoint-3 {
+		.timepoint-2 {
 			background-image: url(../../assets/home-page/gallery-section/gallery5.jpg),
 				$timepoint-bg-gradient;
 		}
 
-		.timepoint-4 {
+		.timepoint-3 {
 			background-image: url(../../assets/home-page/gallery-section/gallery7.jpg),
+				$timepoint-bg-gradient;
+		}
+
+		.timepoint-4 {
+			background-image: url(../../assets/events-page/cultural-bg.jpg),
 				$timepoint-bg-gradient;
 		}
 	}
 
 	.events-section {
-		box-shadow: 0 0 70px 100px black;
-
 		.wrapper {
 			background: linear-gradient(
 				to bottom,
