@@ -49,7 +49,7 @@ const timepoints = [
 function scrollSnap() {
 	gsap.to(window, {
 		scrollTo: { y: ".timepoints-container", autoKill: false },
-		duration: 2,
+		duration: 1,
 		ease: "power4.out",
 	});
 }
@@ -58,6 +58,7 @@ function scrollToTimeline(trigger: HTMLElement | string, reverse = false) {
 	const scrollTriggerObj: ScrollTrigger.StaticVars = {
 		trigger,
 		start: "center center",
+		end: "center center",
 	};
 
 	if (reverse) {
@@ -99,7 +100,7 @@ export default function TimelineSection() {
 						start: "top top+=5%",
 						end: "bottom top+=5%",
 						scroller: ".timepoints-container",
-						toggleActions: "restart none none reverse",
+						toggleActions: "restart reverse restart reverse",
 					},
 					y: 0,
 					opacity: 1,
@@ -112,6 +113,7 @@ export default function TimelineSection() {
 				scrollTrigger: {
 					trigger: ".timepoints-container",
 					start: "top top",
+					end: "top top+=1%",
 					pin: true,
 				},
 			});
