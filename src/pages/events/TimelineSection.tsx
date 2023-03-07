@@ -42,7 +42,7 @@ const timepoints = [
 	{
 		title: "CULTURAL DAY",
 		date: "19/03/2023",
-		events: ["CULTURAL NIGHT", "DANCE PARTY", "UNLIMITED FUN"],
+		events: ["CULTURAL NIGHT", "LINEUPS TO BE ANNOUNCED SOON", "UNLIMITED FUN"],
 	},
 ];
 
