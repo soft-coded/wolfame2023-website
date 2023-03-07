@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+// import ScrollTrigger from "gsap/ScrollTrigger";
 
 export function animateTitleBg(
 	titleBgClass: string,
@@ -59,7 +59,7 @@ export function imageTiltGyro(e: DeviceOrientationEvent, imageClass: string) {
 	});
 }
 
-export function scrollSnapAnim(
+/* export function scrollSnapAnim(
 	selectorQuery: string,
 	enterAnim: gsap.core.Tween | undefined = undefined
 ) {
@@ -115,4 +115,4 @@ export function scrollSnapAnim(
 			onEnterBack: () => goToSection(section),
 		});
 	});
-}
+} */

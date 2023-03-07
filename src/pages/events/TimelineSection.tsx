@@ -1,8 +1,9 @@
 import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import "./events.scss";
-import { animateTitleBg, scrollSnapAnim } from "../../utils/functions";
+import { animateTitleBg } from "../../utils/functions";
 import scratchPng from "../../assets/scratch.png";
 
 const timepoints = [
@@ -45,6 +46,29 @@ const timepoints = [
 	},
 ];
 
+function scrollToTimeline(trigger: HTMLElement | string, reverse = false) {
+	function scrollSnap() {
+		gsap.to(window, {
+			scrollTo: { y: ".timepoints-container", autoKill: false },
+			duration: 2,
+			ease: "power4.out",
+		});
+	}
+
+	const scrollTriggerObj: ScrollTrigger.StaticVars = {
+		trigger,
+		start: "center center",
+	};
+
+	if (reverse) {
+		scrollTriggerObj.onEnterBack = () => scrollSnap();
+	} else {
+		scrollTriggerObj.onEnter = () => scrollSnap();
+	}
+
+	ScrollTrigger.create(scrollTriggerObj);
+}
+
 export default function TimelineSection() {
 	const timelineSectionRef = useRef<HTMLElement>(null);
 
@@ -52,7 +76,13 @@ export default function TimelineSection() {
 		window.scrollTo(0, 0);
 
 		const ctx = gsap.context(() => {
-			scrollSnapAnim(".timepoint");
+			scrollToTimeline("header");
+			scrollToTimeline(
+				document.querySelector<HTMLElement>(
+					".events-page .events-section header"
+				)!,
+				true
+			);
 
 			const timepointNodes = gsap.utils.toArray<HTMLDivElement>(".timepoint");
 			timepointNodes.forEach((node) => {
@@ -66,8 +96,9 @@ export default function TimelineSection() {
 				gsap.to(childNodes, {
 					scrollTrigger: {
 						trigger: node,
-						start: "top top+=10%",
-						end: "bottom top+=10%",
+						start: "top top+=5%",
+						end: "bottom top+=5%",
+						scroller: ".timepoints-container",
 						toggleActions: "restart none none reverse",
 					},
 					y: 0,
@@ -77,10 +108,21 @@ export default function TimelineSection() {
 				});
 			});
 
+			gsap.to(".timepoints-container", {
+				scrollTrigger: {
+					trigger: ".timepoints-container",
+					start: "top top",
+					pin: true,
+				},
+			});
+
 			animateTitleBg(".title-bg", "header");
 		}, timelineSectionRef);
 
-		return () => ctx.revert();
+		return () => {
+			ctx.revert();
+			ScrollTrigger.killAll();
+		};
 	}, []);
 
 	return (

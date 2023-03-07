@@ -29,7 +29,16 @@ $timepoint-bg-gradient: radial-gradient(
 	.timeline-section {
 		box-shadow: 0 0 70px 100px black;
 
+		.timepoints-container {
+			scroll-snap-type: mandatory;
+			scroll-snap-points-y: repeat(100vh);
+			scroll-snap-type: y mandatory;
+			height: 100vh;
+			overflow-y: scroll;
+		}
+
 		.timepoint {
+			scroll-snap-align: start;
 			height: 100vh;
 			background-blend-mode: color;
 		}
