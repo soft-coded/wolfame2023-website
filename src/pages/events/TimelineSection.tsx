@@ -46,15 +46,15 @@ const timepoints = [
 	},
 ];
 
-function scrollToTimeline(trigger: HTMLElement | string, reverse = false) {
-	function scrollSnap() {
-		gsap.to(window, {
-			scrollTo: { y: ".timepoints-container", autoKill: false },
-			duration: 2,
-			ease: "power4.out",
-		});
-	}
+function scrollSnap() {
+	gsap.to(window, {
+		scrollTo: { y: ".timepoints-container", autoKill: false },
+		duration: 2,
+		ease: "power4.out",
+	});
+}
 
+function scrollToTimeline(trigger: HTMLElement | string, reverse = false) {
 	const scrollTriggerObj: ScrollTrigger.StaticVars = {
 		trigger,
 		start: "center center",
