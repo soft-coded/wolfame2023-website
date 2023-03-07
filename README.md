@@ -6,6 +6,7 @@ Website for the annual cultural and sports festival of Wolfenden Hall, IIEST Shi
 
 - Typescript React for UI
 - SASS (SCSS)
+- Tailwind CSS
 - Typescript Redux for state management
 - GSAP for animations
 
