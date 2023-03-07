@@ -35,6 +35,11 @@ $timepoint-bg-gradient: radial-gradient(
 			scroll-snap-type: y mandatory;
 			height: 100vh;
 			overflow-y: scroll;
+			scrollbar-width: none;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
 		}
 
 		.timepoint {
