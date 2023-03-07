@@ -97,8 +97,8 @@ export default function TimelineSection() {
 				gsap.to(childNodes, {
 					scrollTrigger: {
 						trigger: node,
-						start: "top top+=5%",
-						end: "bottom top+=5%",
+						start: "top top+=5px",
+						end: "bottom top+=5px",
 						scroller: ".timepoints-container",
 						toggleActions: "restart reverse restart reverse",
 					},
@@ -113,7 +113,7 @@ export default function TimelineSection() {
 				scrollTrigger: {
 					trigger: ".timepoints-container",
 					start: "top top",
-					end: "top top+=1%",
+					end: "top top+=10px",
 					pin: true,
 				},
 			});

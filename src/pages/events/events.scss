@@ -30,8 +30,6 @@ $timepoint-bg-gradient: radial-gradient(
 		box-shadow: 0 0 70px 100px black;
 
 		.timepoints-container {
-			scroll-snap-type: mandatory;
-			scroll-snap-points-y: repeat(100vh);
 			scroll-snap-type: y mandatory;
 			height: 100vh;
 			overflow-y: scroll;
