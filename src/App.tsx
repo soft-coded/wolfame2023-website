@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollTo from "gsap/ScrollToPlugin";
@@ -13,20 +14,16 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollTo);
 
 export default function App() {
-	const { pathname } = useLocation();
-	useEffect(() => {
-		// reset scroll on load, need setTimeout because synchronous call might fail
-		setTimeout(() => {
-			window.scrollTo(0, 0);
-		}, 0);
-	}, [pathname]);
+	const location = useLocation();
 
 	return (
-		<Routes>
-			<Route path="/" element={<HomePage />} />
-			<Route path="/events" element={<EventsPage />} />
-			<Route path="/leaderboards" element={<Leaderboards />} />
-			<Route path="/about" element={<AboutPage />} />
-		</Routes>
+		<AnimatePresence mode="wait">
+			<Routes location={location} key={location.key}>
+				<Route path="/" element={<HomePage />} />
+				<Route path="/events" element={<EventsPage />} />
+				<Route path="/leaderboards" element={<Leaderboards />} />
+				<Route path="/about" element={<AboutPage />} />
+			</Routes>
+		</AnimatePresence>
 	);
 }
