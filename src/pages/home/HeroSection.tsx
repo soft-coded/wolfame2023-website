@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import wolfPng from "../../assets/wolf.png";
 import slideshow6 from "../../assets/home-page/hero-section/slideshow6.jpg";
@@ -15,6 +16,13 @@ import { imageTilt, imageTiltGyro } from "../../utils/functions";
 const topSlideshow = [slideshow6, slideshow7, slideshow8, slideshow9];
 
 const bottomSlideshow = [slideshow15, slideshow16, slideshow17, slideshow18];
+
+function toggleSlideshowsPlayState(state: "running" | "paused") {
+	const slideShows = document.querySelectorAll<HTMLDivElement>(".slideshow");
+	slideShows.forEach((slideshow) => {
+		slideshow.style.animationPlayState = state;
+	});
+}
 
 export default function HeroSection() {
 	const heroSectionRef = useRef<HTMLElement>(null);
@@ -36,6 +44,21 @@ export default function HeroSection() {
 			heroSection.removeEventListener("mousemove", heroImageTilt);
 			window.removeEventListener("deviceorientation", heroImageTiltGyro);
 		};
+	}, []);
+
+	useLayoutEffect(() => {
+		// pause slideshow when scrolled out of view
+		const ctx = gsap.context(() => {
+			ScrollTrigger.create({
+				trigger: heroSectionRef.current,
+				start: "bottom top",
+				end: "bottom top",
+				onEnter: () => toggleSlideshowsPlayState("paused"),
+				onEnterBack: () => toggleSlideshowsPlayState("running"),
+			});
+		}, heroSectionRef);
+
+		return () => ctx.revert();
 	}, []);
 
 	return (
