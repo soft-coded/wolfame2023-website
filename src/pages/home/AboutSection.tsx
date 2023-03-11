@@ -104,7 +104,7 @@ export default function AboutSection() {
 					is the home to many prestigious events organised throughout the year,
 					one of&nbsp; them being <span className="WOLFAME"></span>.
 					<br /> Residents of Wolfenden Hall participate in and organise all of
-					the activities in the institute.
+					the activities.
 					<br /> The hall is home to free-thinkers who want to prove their
 					mettle in every field, be it sports, academics, music and everything
 					else.
