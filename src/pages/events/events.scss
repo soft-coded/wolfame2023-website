@@ -75,7 +75,7 @@ $timepoint-bg-gradient: radial-gradient(
 	.points-section {
 		.wrapper {
 			background-image: url(../../assets/home-page/hero-section/slideshow16.jpg),
-				$timepoint-bg-gradient;
+				radial-gradient(80% 50% at 50% 50%, rgba(0, 0, 0, 0.37), black);
 			background-blend-mode: color;
 		}
 
@@ -84,6 +84,10 @@ $timepoint-bg-gradient: radial-gradient(
 			place-items: center;
 			column-gap: 2vmax;
 			row-gap: 6vmin;
+
+			@media (max-width: constants.$mobile-width) {
+				row-gap: 9vmin;
+			}
 
 			& > * {
 				text-align: center;

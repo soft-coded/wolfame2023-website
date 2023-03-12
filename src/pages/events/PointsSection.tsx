@@ -67,7 +67,7 @@ export default function PointsSection() {
 			</header>
 			<div className="wrapper background-image my-12">
 				<div className="container table-container grid">
-					<span className="font-extrabold">SERIAL NO.</span>
+					<span className="font-extrabold">SR.</span>
 					<span className="font-extrabold">EVENT</span>
 					<span className="font-extrabold">1ST</span>
 					<span className="font-extrabold">2ND</span>
