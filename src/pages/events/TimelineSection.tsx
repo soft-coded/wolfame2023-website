@@ -80,7 +80,7 @@ export default function TimelineSection() {
 			scrollToTimeline("header");
 			scrollToTimeline(
 				document.querySelector<HTMLElement>(
-					".events-page .events-section header"
+					".events-page .points-section header"
 				)!,
 				true
 			);
