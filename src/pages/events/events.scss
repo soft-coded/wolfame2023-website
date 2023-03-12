@@ -72,6 +72,25 @@ $timepoint-bg-gradient: radial-gradient(
 		}
 	}
 
+	.points-section {
+		.wrapper {
+			background-image: url(../../assets/home-page/hero-section/slideshow16.jpg),
+				$timepoint-bg-gradient;
+			background-blend-mode: color;
+		}
+
+		.table-container {
+			grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+			place-items: center;
+			column-gap: 2vmax;
+			row-gap: 6vmin;
+
+			& > * {
+				text-align: center;
+			}
+		}
+	}
+
 	.events-section {
 		.wrapper {
 			background: linear-gradient(
