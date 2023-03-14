@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 
 import "./index.scss";
@@ -18,9 +18,7 @@ export default function SectionHeader({
 	sectionRef,
 	animationClasses,
 }: HeaderProps) {
-	useLayoutEffect(() => {
-		if (!sectionRef.current) return;
-
+	useEffect(() => {
 		const ctx = gsap.context(() => {
 			if (animationClasses) {
 				animateTitleBg(animationClasses[0], animationClasses[1]);
