@@ -15,12 +15,6 @@ import talentwala from "../../assets/home-page/sponsors-section/talentwala.jpg";
 import theGlobalHues from "../../assets/home-page/sponsors-section/the-global-hues.jpg";
 import waaMomo from "../../assets/home-page/sponsors-section/waa-momo.jpg";
 
-const sponsorsList = [
-	{ logo: elm, title: "E-learn markets", backgroundColor: "#ffffff" },
-	{ logo: fusionGrill, title: "Fusion grill", backgroundColor: "#ff5d11" },
-	{ logo: waaMomo, title: "waa momo", backgroundColor: "#f7e32c" },
-];
-
 function SponsorCard({
 	logo,
 	title,
