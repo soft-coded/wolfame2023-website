@@ -11,6 +11,7 @@ import cricketPhoto from "../../assets/events/cricket.jpg";
 import powerliftingPhoto from "../../assets/events/powerlifting.jpg";
 import valorantPhoto from "../../assets/events/valorant.jpg";
 import fifaPhoto from "../../assets/events/fifa.jpg";
+import hallPhoto from "../../assets/home-page/wolfame.jpg";
 
 export type EventType = {
 	name: string;
@@ -24,6 +25,16 @@ export type EventsDataType = {
 };
 
 const eventsData: EventsDataType = {
+	registrationRules: {
+		name: "REGISTRATION RULES",
+		rules: [
+			"All interested students are required to report to their respective hall/hostel JMCR.",
+			"Each participant must have a valid identity card issued by the institution.",
+			"2nd and 1st year participants must have a valid Provisional Admission Letter.",
+			"Day scholars and PG students can register by contacting the JMCR of the following hall/hostel:<br />1st year: Hostel 8, 9, 10<br />2nd year: Hostel 7, 11, 14<br />3rd year: Hostel 14, 15, 16, Wolfenden Hall, MacDonald Hall, Richardson Hall, Sengupta Hall, Sen Hall<br />4th year: Wolfenden Hall, MacDonald Hall, Richardson Hall, Sengupta Hall, Sen Hall<br /> PG, PhD students: PG Hostel (13)",
+		],
+		photo: hallPhoto,
+	},
 	futsal: {
 		name: "FUTSAL",
 		rules: [
