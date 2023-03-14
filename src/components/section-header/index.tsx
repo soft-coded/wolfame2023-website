@@ -19,6 +19,8 @@ export default function SectionHeader({
 	animationClasses,
 }: HeaderProps) {
 	useLayoutEffect(() => {
+		if (!sectionRef.current) return;
+
 		const ctx = gsap.context(() => {
 			if (animationClasses) {
 				animateTitleBg(animationClasses[0], animationClasses[1]);
