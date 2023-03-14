@@ -182,6 +182,24 @@ $events-section-gap: 4rem;
 		}
 	}
 
+	.sponsors-section {
+		.container {
+			gap: 2vmax;
+		}
+
+		.sponsor-card {
+			width: calc(33.33% - 2vmax);
+			aspect-ratio: 1 / 1;
+			border-radius: 10px;
+
+			@media (max-width: constants.$mobile-width) {
+				width: calc(50% - 2vmax);
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+		}
+	}
+
 	.gallery-section {
 		.gallery-images-wrapper {
 			background-image: radial-gradient(

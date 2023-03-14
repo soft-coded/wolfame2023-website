@@ -36,7 +36,7 @@ export default function SectionHeader({
 				className ?? ""
 			}`}
 		>
-			<h3 className="text-center relative">
+			<h3 className="text-center container relative">
 				<div className="image-container title-bg">
 					<img src={scratchPng} alt="scratch" />
 				</div>
