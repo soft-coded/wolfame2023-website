@@ -2,9 +2,8 @@ import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
+import SectionHeader from "../../components/section-header";
 import "./events.scss";
-import { animateTitleBg } from "../../utils/functions";
-import scratchPng from "../../assets/scratch.png";
 
 const timepoints = [
 	{
@@ -117,8 +116,6 @@ export default function TimelineSection() {
 					pin: true,
 				},
 			});
-
-			animateTitleBg(".title-bg", "header");
 		}, timelineSectionRef);
 
 		return () => {
@@ -129,14 +126,7 @@ export default function TimelineSection() {
 
 	return (
 		<section ref={timelineSectionRef} className="timeline-section">
-			<header className="h-screen w-screen flex items-center justify-center bg-gradient">
-				<h3 className="text-center relative">
-					<div className="image-container title-bg">
-						<img src={scratchPng} alt="Scratch" />
-					</div>
-					<span className="relative z-10">TIMELINE</span>
-				</h3>
-			</header>
+			<SectionHeader sectionRef={timelineSectionRef}>TIMELINE</SectionHeader>
 			<div className="timepoints-container">
 				{timepoints.map((timepoint, i) => (
 					<div

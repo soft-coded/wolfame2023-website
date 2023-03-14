@@ -1,9 +1,8 @@
 import { useRef, useLayoutEffect, Fragment } from "react";
 import gsap from "gsap";
 
+import SectionHeader from "../../components/section-header";
 import "./events.scss";
-import scratchPng from "../../assets/scratch.png";
-import { animateTitleBg } from "../../utils/functions";
 
 const pointsData = [
 	{
@@ -48,8 +47,6 @@ export default function PointsSection() {
 					toggleActions: "play none restart pause",
 				},
 			});
-
-			animateTitleBg(".title-bg", "header");
 		}, pointsSectionRef);
 
 		return () => ctx.revert();
@@ -57,14 +54,7 @@ export default function PointsSection() {
 
 	return (
 		<section ref={pointsSectionRef} className="points-section">
-			<header className="h-screen w-screen flex items-center justify-center bg-gradient">
-				<h3 className="text-center container relative">
-					<div className="image-container title-bg">
-						<img src={scratchPng} alt="Scratch" />
-					</div>
-					<span className="relative z-10">POINTS TABLE</span>
-				</h3>
-			</header>
+			<SectionHeader sectionRef={pointsSectionRef}>POINTS TABLE</SectionHeader>
 			<div className="wrapper background-image my-12">
 				<div className="container table-container grid">
 					<span className="font-extrabold">SR.</span>
