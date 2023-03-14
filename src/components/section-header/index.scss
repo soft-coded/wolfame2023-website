@@ -1,0 +1,13 @@
+@use "../../utils/constants";
+
+.title-bg {
+	@apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+	width: 40vw;
+	overflow: hidden;
+
+	@media (max-width: constants.$mobile-width) {
+		width: 100vw;
+		height: 100vh;
+		overflow: visible;
+	}
+}

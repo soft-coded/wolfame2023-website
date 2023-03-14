@@ -5,6 +5,7 @@ import HeroLoader from "./HeroLoader";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import EventsSection from "./EventsSection";
+import SponsorsSection from "./SponsorsSection";
 import GallerySection from "./GallerySection";
 import Page from "../../components/page/Page";
 import "./home.scss";
@@ -70,6 +71,7 @@ export default function HomePage() {
 				<HeroSection />
 				<AboutSection />
 				<EventsSection />
+				<SponsorsSection />
 				<GallerySection />
 			</div>
 		</Page>

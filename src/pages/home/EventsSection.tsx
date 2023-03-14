@@ -1,11 +1,11 @@
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
+import SectionHeader from "../../components/section-header";
 import futsalPhoto from "../../assets/events/futsal.jpg";
 import tugOfWarPhoto from "../../assets/events/tug-of-war.jpg";
 import volleyballPhoto from "../../assets/events/volleyball.jpg";
@@ -20,7 +20,6 @@ import powerliftingPhoto from "../../assets/events/powerlifting.jpg";
 import valorantPhoto from "../../assets/events/valorant.jpg";
 import fifaPhoto from "../../assets/events/fifa.jpg";
 import scratchPng from "../../assets/scratch.png";
-import { animateTitleBg } from "../../utils/functions";
 
 const eventsList = [
 	{
@@ -93,38 +92,15 @@ const eventsList = [
 export default function EventsSection() {
 	const eventsSectionRef = useRef<HTMLElement>(null);
 
-	useLayoutEffect(() => {
-		const ctx = gsap.context(() => {
-			animateTitleBg(".events-section .title-bg", ".events-section header");
-		}, eventsSectionRef);
-
-		return () => ctx.revert();
-	}, []);
-
 	return (
 		<section ref={eventsSectionRef} className="events-section">
-			<header className="h-screen w-screen flex items-center justify-center bg-gradient">
-				<h3 className="text-center relative">
-					<div className="image-container title-bg">
-						<img src={scratchPng} alt="Scratch" />
-					</div>
-					<span className="relative z-10">EVENTS</span>
-				</h3>
-			</header>
+			<SectionHeader sectionRef={eventsSectionRef}>EVENTS</SectionHeader>
 			<div className="events-swiper-container flex items-center justify-center">
 				<Swiper
 					effect="coverflow"
 					grabCursor
 					centeredSlides
 					slidesPerView="auto"
-					// coverflowEffect={{
-					// 	rotate: 50,
-					// 	stretch: 0,
-					// 	depth: 300,
-					// 	modifier: 1,
-					// 	slideShadows: true,
-					// }}
-					// spaceBetween={50}
 					pagination={{
 						dynamicBullets: true,
 						clickable: false,

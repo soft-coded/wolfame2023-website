@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
 
+import SectionHeader from "../../components/section-header";
 import gallery1 from "../../assets/home-page/gallery-section/gallery1.jpg";
 import gallery2 from "../../assets/home-page/gallery-section/gallery2.jpg";
 import gallery3 from "../../assets/home-page/gallery-section/gallery3.jpg";
@@ -16,12 +16,7 @@ import gallery12 from "../../assets/home-page/gallery-section/gallery12.jpg";
 import gallery13 from "../../assets/home-page/gallery-section/gallery13.jpg";
 import gallery14 from "../../assets/home-page/gallery-section/gallery14.jpg";
 import gallery15 from "../../assets/home-page/gallery-section/gallery15.jpg";
-import scratchPng from "../../assets/scratch.png";
-import {
-	animateTitleBg,
-	imageTilt,
-	imageTiltGyro,
-} from "../../utils/functions";
+import { imageTilt, imageTiltGyro } from "../../utils/functions";
 import constants from "../../utils/constants";
 
 const col1Images = [gallery1, gallery2, gallery3, gallery4, gallery5];
@@ -72,15 +67,10 @@ export default function GallerySection() {
 			imageTiltGyro(e, ".gallery-image");
 		const galleryColumnsContainer = galleryColumnsContainerRef.current;
 
-		const ctx = gsap.context(() => {
-			animateTitleBg(".gallery-section .title-bg", ".gallery-section header");
-		}, gallerySectionRef);
-
 		galleryColumnsContainer.addEventListener("mousemove", galleryImageTilt);
 		window.addEventListener("deviceorientation", galleryImageTiltGyro);
 
 		return () => {
-			ctx.revert();
 			galleryColumnsContainer.removeEventListener(
 				"mousemove",
 				galleryImageTilt
@@ -91,14 +81,7 @@ export default function GallerySection() {
 
 	return (
 		<section ref={gallerySectionRef} className="gallery-section relative">
-			<header className="h-screen bg-gradient flex items-center justify-center">
-				<h3 className="text-center relative">
-					<div className="image-container title-bg">
-						<img src={scratchPng} alt="scratch" />
-					</div>
-					<span className="relative z-10">GALLERY</span>
-				</h3>
-			</header>
+			<SectionHeader sectionRef={gallerySectionRef}>GALLERY</SectionHeader>
 			<div className="gallery-images-wrapper">
 				<div
 					ref={galleryColumnsContainerRef}

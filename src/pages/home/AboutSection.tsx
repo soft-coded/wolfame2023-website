@@ -1,8 +1,7 @@
 import { useLayoutEffect, ReactNode, useRef } from "react";
 import gsap from "gsap";
 
-import scratchPng from "../../assets/scratch.png";
-import { animateTitleBg } from "../../utils/functions";
+import SectionHeader from "../../components/section-header";
 
 function PanelDiv({
 	children,
@@ -54,25 +53,15 @@ export default function AboutSection() {
 		return () => ctx.revert();
 	}, []);
 
-	useLayoutEffect(() => {
-		const ctx = gsap.context(() => {
-			animateTitleBg(".about-intro .title-bg", ".about-intro");
-			animateTitleBg(".about-hall-title .title-bg", ".about-hall-title");
-		}, aboutSectionRef);
-
-		return () => ctx.revert();
-	}, []);
-
 	return (
 		<section ref={aboutSectionRef} className="about-section">
-			<PanelDiv className="about-intro bg-gradient">
-				<h3 className="heading container text-center relative">
-					<div className="image-container title-bg">
-						<img src={scratchPng} alt="Scratch" />
-					</div>
-					WHAT <span className="WOLFAME"></span> IS
-				</h3>
-			</PanelDiv>
+			<SectionHeader
+				sectionRef={aboutSectionRef}
+				className="panel about-intro"
+				animationClasses={[".about-intro .title-bg", ".about-intro"]}
+			>
+				WHAT <span className="WOLFAME" /> IS
+			</SectionHeader>
 			<PanelDiv className="about-wolfame background-image">
 				<h5 className="container info-text text-center">
 					<span className="WOLFAME"></span> is the cultural sports festival
@@ -88,14 +77,13 @@ export default function AboutSection() {
 					fun, and is attended by thousands of people every year.
 				</h5>
 			</PanelDiv>
-			<PanelDiv className="about-hall-title bg-gradient">
-				<h3 className="heading text-center relative">
-					<div className="image-container title-bg">
-						<img src={scratchPng} alt="Scratch" />
-					</div>
-					WOLFENDEN HALL
-				</h3>
-			</PanelDiv>
+			<SectionHeader
+				className="panel about-hall-title"
+				sectionRef={aboutSectionRef}
+				animationClasses={[".about-hall-title .title-bg", ".about-hall-title"]}
+			>
+				WOLFENDEN HALL
+			</SectionHeader>
 			<PanelDiv className="about-hall background-image">
 				<h5 className="container info-text text-center">
 					Wolfenden Hall is a place of residence for the students of Indian

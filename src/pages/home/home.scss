@@ -121,10 +121,6 @@ $events-section-gap: 4rem;
 	}
 
 	.events-section {
-		.title-bg {
-			z-index: 0;
-		}
-
 		.event-list {
 			display: flex;
 			flex-direction: column;
@@ -187,10 +183,6 @@ $events-section-gap: 4rem;
 	}
 
 	.gallery-section {
-		.title-bg {
-			z-index: 0;
-		}
-
 		.gallery-images-wrapper {
 			background-image: radial-gradient(
 				100% 60% at 50% 50%,
