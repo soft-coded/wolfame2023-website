@@ -16,16 +16,8 @@ import theGlobalHues from "../../assets/home-page/sponsors-section/the-global-hu
 import waaMomo from "../../assets/home-page/sponsors-section/waa-momo.jpg";
 
 const sponsorsList = [
-	{ logo: cocaCola, title: "Coca Cola", backgroundColor: "#ffffff" },
-	{ logo: decathlon, title: "Decathlon", backgroundColor: "#0082c6" },
 	{ logo: elm, title: "E-learn markets", backgroundColor: "#ffffff" },
 	{ logo: fusionGrill, title: "Fusion grill", backgroundColor: "#ff5d11" },
-	{ logo: grapevine, title: "Grapevine", backgroundColor: "#000000" },
-	{ logo: lic, title: "lic", backgroundColor: "#000000" },
-	{ logo: mtv, title: "mtv", backgroundColor: "#000000" },
-	{ logo: nba, title: "nba", backgroundColor: "#d91f33" },
-	{ logo: talentwala, title: "talentwala", backgroundColor: "#000000" },
-	{ logo: theGlobalHues, title: "the global hues", backgroundColor: "#ffffff" },
 	{ logo: waaMomo, title: "waa momo", backgroundColor: "#f7e32c" },
 ];
 
@@ -48,12 +40,36 @@ function SponsorCard({
 	);
 }
 
+function SponsorColumn({
+	title,
+	sponsors,
+}: {
+	title: string;
+	sponsors: {
+		logo: string;
+		title: string;
+		backgroundColor: string;
+	}[];
+}) {
+	return (
+		<div className="sponsors-column flex flex-col gap-4 items-center">
+			<h6 className="title text-center font-semibold">{title}</h6>
+			<div className="sponsors-container flex items-center gap-4">
+				{sponsors.map((sponsor, i) => (
+					<SponsorCard key={i} {...sponsor} />
+				))}
+			</div>
+		</div>
+	);
+}
+
 export default function SponsorsSection() {
 	const sponsorsSectionRef = useRef<HTMLElement>(null);
 
 	useLayoutEffect(() => {
 		const ctx = gsap.context(() => {
-			const sponsorCards = gsap.utils.toArray<HTMLDivElement>(".sponsor-card");
+			const sponsorCards =
+				gsap.utils.toArray<HTMLDivElement>(".sponsors-column");
 
 			gsap.set(sponsorCards, { x: -50, opacity: 0 });
 
@@ -80,10 +96,85 @@ export default function SponsorsSection() {
 		<section ref={sponsorsSectionRef} className="sponsors-section">
 			<SectionHeader sectionRef={sponsorsSectionRef}>SPONSORS</SectionHeader>
 			<div className="wrapper bg-gradient">
-				<div className="container flex flex-wrap justify-center">
-					{sponsorsList.map((sponsor, i) => (
-						<SponsorCard {...sponsor} key={i} />
-					))}
+				<div className="container flex flex-col justify-center">
+					<SponsorColumn
+						title="TITLE SPONSOR"
+						sponsors={[
+							{
+								logo: cocaCola,
+								title: "Coca Cola",
+								backgroundColor: "#ffffff",
+							},
+						]}
+					/>
+					<div className="sponsors-column-group">
+						<SponsorColumn
+							title="POWERED BY"
+							sponsors={[
+								{
+									logo: decathlon,
+									title: "Decathlon",
+									backgroundColor: "#0082c6",
+								},
+							]}
+						/>
+						<SponsorColumn
+							title="IN ASSOCIATION WITH"
+							sponsors={[
+								{ logo: lic, title: "lic", backgroundColor: "#000000" },
+							]}
+						/>
+					</div>
+					<div className="sponsors-column-group">
+						<SponsorColumn
+							title="YOUTH PARTNER"
+							sponsors={[
+								{
+									logo: grapevine,
+									title: "Grapevine",
+									backgroundColor: "#000000",
+								},
+							]}
+						/>
+						<SponsorColumn
+							title="ARTIST PARTNER"
+							sponsors={[
+								{
+									logo: talentwala,
+									title: "talentwala",
+									backgroundColor: "#000000",
+								},
+							]}
+						/>
+					</div>
+					<SponsorColumn
+						title="MEDIA PARTNERS"
+						sponsors={[
+							{ logo: nba, title: "nba", backgroundColor: "#d81f32" },
+							{ logo: mtv, title: "mtv", backgroundColor: "#000000" },
+							{
+								logo: theGlobalHues,
+								title: "the global hues",
+								backgroundColor: "#ffffff",
+							},
+						]}
+					/>
+					<SponsorColumn
+						title="OTHER PARTNERS"
+						sponsors={[
+							{
+								logo: elm,
+								title: "E-learn markets",
+								backgroundColor: "#ffffff",
+							},
+							{
+								logo: fusionGrill,
+								title: "Fusion grill",
+								backgroundColor: "#ff5d11",
+							},
+							{ logo: waaMomo, title: "waa momo", backgroundColor: "#f7e32c" },
+						]}
+					/>
 				</div>
 			</div>
 		</section>

@@ -5,6 +5,7 @@ $slideshow-image-count: 4;
 $slideshow-image-width: 500px;
 $section-padding-y: 100px;
 $events-section-gap: 4rem;
+$sponsors-section-gap: 2vmax;
 
 .homepage {
 	.hero-loader {
@@ -188,18 +189,43 @@ $events-section-gap: 4rem;
 
 	.sponsors-section {
 		.container {
-			gap: 2vmax;
+			margin-bottom: $events-section-gap;
+			gap: $sponsors-section-gap;
 		}
 
 		.sponsor-card {
-			width: calc(33.33% - 2vmax);
+			width: calc(25vmax - $sponsors-section-gap);
 			aspect-ratio: 1 / 1;
 			border-radius: 10px;
 
 			@media (max-width: constants.$mobile-width) {
-				width: calc(50% - 2vmax);
+				width: 100%;
 				padding-left: 1rem;
 				padding-right: 1rem;
+			}
+		}
+
+		.sponsors-column {
+			margin-top: 1vmax;
+			margin-bottom: 1vmax;
+		}
+
+		.sponsors-column-group {
+			display: flex;
+			gap: $sponsors-section-gap;
+
+			@media (max-width: constants.$mobile-width) {
+				flex-direction: column;
+			}
+
+			& .sponsors-column {
+				flex: 1;
+			}
+		}
+
+		.sponsors-container {
+			@media (max-width: constants.$mobile-width) {
+				flex-direction: column;
 			}
 		}
 	}
