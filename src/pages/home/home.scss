@@ -109,6 +109,10 @@ $events-section-gap: 4rem;
 			position: relative;
 			z-index: 1;
 			font-weight: 500;
+
+			@media (max-width: constants.$mobile-width) {
+				font-size: 5vw;
+			}
 		}
 
 		.about-wolfame {

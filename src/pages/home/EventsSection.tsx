@@ -19,7 +19,6 @@ import cricketPhoto from "../../assets/events/cricket.jpg";
 import powerliftingPhoto from "../../assets/events/powerlifting.jpg";
 import valorantPhoto from "../../assets/events/valorant.jpg";
 import fifaPhoto from "../../assets/events/fifa.jpg";
-import scratchPng from "../../assets/scratch.png";
 
 const eventsList = [
 	{
