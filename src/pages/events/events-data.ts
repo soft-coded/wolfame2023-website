@@ -9,6 +9,7 @@ import ttPhoto from "../../assets/events/table-tennis.jpg";
 import bgmiPhoto from "../../assets/events/bgmi.jpg";
 import cricketPhoto from "../../assets/events/cricket.jpg";
 import powerliftingPhoto from "../../assets/events/powerlifting.jpg";
+import strongWomanPhoto from "../../assets/events/strong-woman.jpg";
 import valorantPhoto from "../../assets/events/valorant.jpg";
 import fifaPhoto from "../../assets/events/fifa.jpg";
 import hallPhoto from "../../assets/home-page/wolfame.jpg";
@@ -186,6 +187,23 @@ const eventsData: EventsDataType = {
 			"The entire event will be recorded.",
 		],
 		photo: powerliftingPhoto,
+	},
+	strongWoman: {
+		name: "STRONG WOMAN",
+		rules: [
+			"The event will consist of 3 activities- Forearm Plank, Sprinting and Bodyweight Squats.",
+			"The participants are required to do :- plank (duration - 1.5 minutes), 100 metre sprint and 30 Bodyweight squats.",
+			"There will be 4 judges.",
+			"The participants will have to complete all the 3 tasks in one go, following the correct techniques.",
+			"The participant will be disqualified if she fails to do all the 3 tasks.",
+			"In the event of any controversy, related to the judges' decision, a slow motion video recording will be consulted.",
+			"The right technique for the activities is described below.",
+			"Forearm plank:-<br/>Place forearms on the floor with elbows aligned below shoulders and arms parallel to your body at about shoulder width.<br/>Ground toes into the floor, keeping your legs straight.<br/>Your head should be in line with your back.<br/>Keep your torso straight and rigid and your body in a straight line, with no sagging or bending.<br/>Hold this position for 90 seconds.",
+			"Squats:-<br/>Stand straight up with your feet shoulder's width apart.<br/>While bending at the knees, push your hips out and bend down.<br/>Keep your torso erect.<br/>Bend till the knee joint makes a 90° angle.<br/>Don't allow your knees to extend beyond your toes, the knees should be in line with the toes rather than angled to the side.<br/>Your feet should remain fully on the ground.",
+			"Criteria for deciding the winner-<br/>The total time taken to complete all the tasks successfully will be recorded.<br/>The participants will be awarded the positions according to the time they take.<br/>The participant with the minimum time duration will be awarded the 1st position and so on.",
+			"The entire event will be video recorded.",
+		],
+		photo: strongWomanPhoto,
 	},
 	bgmi: {
 		name: "BATTLEGROUNDS MOBILE INDIA",
