@@ -1,2 +1,66 @@
+@use "../../utils/constants";
+
+$board-background: linear-gradient(
+	to bottom,
+	black,
+	var(--clr-bg) 10%,
+	95%,
+	black
+);
+
 .leaderboards-page {
+	.hero-section {
+		background-image: url(../../assets/boards-page/hero-bg.jpg);
+
+		.hero-title {
+			color: red;
+			-webkit-text-stroke: 3px var(--clr-text-stroke);
+
+			@media (max-width: constants.$mobile-width) {
+				-webkit-text-stroke-width: 2px;
+			}
+		}
+	}
+
+	.board-section {
+		box-shadow: 0 0 70px 100px black;
+		background: $board-background;
+		padding-top: 20vh;
+		padding-bottom: 20vh;
+
+		.event-buttons-container {
+			overflow-y: hidden;
+		}
+
+		.event-button {
+			border: 1px solid red;
+			border-radius: 10px;
+			padding: 0.5vmax 1.5vmax;
+			transition: all 0.3s ease-out;
+			white-space: nowrap;
+
+			&.active {
+				font-weight: 700;
+				background-color: red;
+			}
+		}
+
+		.board-container {
+			display: grid;
+			column-gap: 1rem;
+			row-gap: 3rem;
+			grid-template-columns: 1fr 2fr 1fr;
+			place-items: center;
+			background-color: rgba(0, 0, 0, 0.263);
+			border-radius: 10px;
+
+			.grid-label {
+				color: red;
+			}
+
+			span {
+				text-align: center;
+			}
+		}
+	}
 }
