@@ -53,7 +53,7 @@ export default function BoardSection() {
 			setMatches(null);
 			try {
 				const leadersData = await getEventLeaders(activeEvent.route);
-				const matchesData = await getEventMatches(activeEvent.route);
+				const matchesData = await getEventMatches(activeEvent.route, 10);
 				setLeaders(leadersData.data.list);
 				setMatches(matchesData.data.matches);
 			} catch (err) {
@@ -101,7 +101,7 @@ export default function BoardSection() {
 				{matches == null ? (
 					<h5 className="text-center mt-6">LOADING...</h5>
 				) : (
-					<div className="board-container flex-1 mt-6 p-8">
+					<div className="board-container matches-container flex-1 mt-6 p-8">
 						<span className="grid-label font-bold">TEAM 1</span>
 						<span className="grid-label font-bold">TEAM 2</span>
 						<span className="grid-label font-bold">WINNER</span>

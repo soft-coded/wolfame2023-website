@@ -23,7 +23,7 @@ $board-background: linear-gradient(
 	}
 
 	.board-section {
-		box-shadow: 0 0 70px 100px black;
+		box-shadow: 0 0 70px 30px black;
 		background: $board-background;
 		padding-top: 20vh;
 		padding-bottom: 20vh;
@@ -53,6 +53,16 @@ $board-background: linear-gradient(
 			place-items: center;
 			background-color: rgba(0, 0, 0, 0.263);
 			border-radius: 10px;
+
+			@media (max-width: constants.$mobile-width) {
+				column-gap: 5vw;
+				font-size: 3.7vw;
+				padding: 6vw;
+			}
+
+			&.matches-container {
+				grid-template-columns: repeat(3, 1fr);
+			}
 
 			.grid-label {
 				color: red;

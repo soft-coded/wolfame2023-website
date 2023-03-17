@@ -157,7 +157,7 @@ const eventsData: EventsDataType = {
 			"If a piece jumps off the board, it is placed on the center spot. If pieces land on end or are overlapping they are left that way.",
 			"If you sink your opponent's piece, you lose your turn. If you sink their last piece, you lose the board and three points.",
 			"If you sink your last piece before the queen, you lose the board, three points and one point for each of your opponent's pieces left.",
-			"If the striker does not leave both lines, go again. You get three tries to break before losing your turn. The winner of a board collects one point for each of the opponent's pieces left at the finish and five points for the queen if covered by the winner (if covered by the loser, no-one gets those points). No more points are collected for the queen after your score reaches 17.",
+			// "If the striker does not leave both lines, go again. You get three tries to break before losing your turn. The winner of a board collects one point for each of the opponent's pieces left at the finish and five points for the queen if covered by the winner (if covered by the loser, no-one gets those points). No more points are collected for the queen after your score reaches 17.",
 			"A game consists of 20 points or five boards, whichever comes first.",
 			"In case of any dispute, organizer's decision will be final.",
 		],
