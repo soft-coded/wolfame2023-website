@@ -4,7 +4,12 @@ Website for the annual cultural and sports festival of Wolfenden Hall, IIEST Shi
 
 ## Preview
 
-https://user-images.githubusercontent.com/68508049/223753119-4c899ea8-d46d-4f34-b7c0-770ed2c96523.mp4
+### Desktop
+
+
+
+https://user-images.githubusercontent.com/68508049/226272454-09f4fd07-ceb3-4e99-903f-b1fce02e15ea.mp4
+
 
 ## Tech stack
 
